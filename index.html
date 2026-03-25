@@ -501,9 +501,9 @@
 </section>
 
 <!-- PRESTATIONS -->
-<div class="container" id="Ce que je peux t'apporter">
+<div class="container" id="prestations">
   <div class="section-intro">
-    <h2 id="section-title">Voici mes <em>cheffs-d'œuvre</em></h2>
+    <h2 id="section-title">Voici mes <em>chefs-d'œuvre</em></h2>
     <p id="section-sub">Clique sur une catégorie pour découvrir les projets</p>
   </div>
   <section class="cards-section">
@@ -536,13 +536,13 @@ const T = {
     "nav.home":      "Accueil",
     "nav.services":  "Prestations",
     "nav.contact":   "Me contacter",
-    "hero.tag":      "Copywriter/Marketing Strategy",
+    "hero.tag":      "Copywriter / Stratégie Marketing",
     "hero.hi":       "Le copywriter que",
     "hero.main":     "tu attendais",
     "hero.subtitle": "Aaron - <em>Copywriting</em>",
     "hero.desc":     "Agence, coach, Ecom...<br> Ton offre est solide, tes résultats clients aussi<br>Mais tu sais que tes Ads, tes Emails et ton tunnel pourraint mieux pérformer <br>(et tu laisses sûrement de l'argent sur la table)",
-    "hero.scroll":   "Ce que je peux t'apporter",
-    "section.title": "Voici mes <em>cheffs-d'œuvre</em>",
+    "hero.scroll":   "Prestations",
+    "section.title": "Voici mes <em>chefs-d'œuvre</em>",
     "section.sub":   "Clique sur une catégorie pour découvrir les projets",
     "footer.rights": "Tous droits réservés",
     "modal.empty":   "Aucun projet disponible pour l'instant.",
@@ -554,11 +554,11 @@ const T = {
     "nav.home":      "Home",
     "nav.services":  "Services",
     "nav.contact":   "Contact me",
-    "hero.tag":      "Copywriter/Stratégie Marketing",
-    "hero.hi":       "Not everyone should see this...",
-    "hero.main":     "but you should",
-    "hero.subtitle": "Aaron <em>Copywriting</em>",
-    "hero.desc":     "Agencies, coaches, infopreneurs...<br> You have a solid offer but... it's leaving money on the table <br> Here, you'll discover how every word can make people click, read and most importantly — buy",
+    "hero.tag":      "Copywriter / Marketing Strategy",
+    "hero.hi":       "The copywriter",
+    "hero.main":     "you've been waiting for",
+    "hero.subtitle": "Aaron — <em>Copywriting</em>",
+    "hero.desc":     "Agency, coach, e-com...<br> Your offer is solid, your client results too<br> But you know your Ads, Emails and funnel could perform better<br>(and you're probably leaving money on the table)",
     "hero.scroll":   "Services",
     "section.title": "My <em>masterpieces</em>",
     "section.sub":   "Click on a category to discover the projects",
@@ -586,13 +586,13 @@ function setLang(l) {
   document.getElementById('nav-home-mobile').textContent   = t('nav.home');
   document.getElementById('nav-services-mobile').textContent = t('nav.services');
   document.getElementById('hero-tag').textContent          = t('hero.tag');
-  document.getElementById('hero-hi').textContent           = t('hero.hi');
   document.getElementById('hero-main').textContent         = t('hero.main');
   document.getElementById('hero-scroll').textContent       = t('hero.scroll');
   document.getElementById('section-sub').textContent       = t('section.sub');
   document.getElementById('footer-rights').textContent     = t('footer.rights');
 
   // Textes avec balises HTML (innerHTML)
+  document.getElementById('hero-hi').innerHTML             = t('hero.hi');
   document.getElementById('hero-subtitle').innerHTML       = t('hero.subtitle');
   document.getElementById('hero-desc').innerHTML           = t('hero.desc');
   document.getElementById('section-title').innerHTML       = t('section.title');
