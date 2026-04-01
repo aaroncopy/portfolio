@@ -5,6 +5,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Aaron — Copywriting</title>
 <link rel="icon" type="image/x-icon" href="paper.png">
+
+<!-- Open Graph / aperçu de lien -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://aaron-copy.fr/">
+<meta property="og:title" content="Portfolio - Aaron">
+
+<meta property="og:image" content="https://aaron-copy.fr/paper.png">
+
+<!-- Twitter/X -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="https://aaron-copy.fr/">
+<meta name="twitter:title" content="Portfolio - Aaron">
+
+<meta name="twitter:image" content="https://aaron-copy.fr/paper.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap" rel="stylesheet">
 <style>
@@ -501,7 +515,7 @@
 </section>
 
 <!-- PRESTATIONS -->
-<div class="container" id="Ce que je peux t'apporter">
+<div class="container" id="prestations">
   <div class="section-intro">
     <h2 id="section-title">Voici mes <em>chefs-d'œuvre</em></h2>
     <p id="section-sub">Clique sur une catégorie pour découvrir les projets</p>
@@ -536,7 +550,7 @@ const T = {
     "nav.home":      "Accueil",
     "nav.services":  "Prestations",
     "nav.contact":   "Me contacter",
-    "hero.tag":      "Copywriter/Marketing Strategy",
+    "hero.tag":      "Copywriter / Stratégie Marketing",
     "hero.hi":       "Le copywriter que",
     "hero.main":     "tu attendais",
     "hero.subtitle": "Aaron - <em>Copywriting</em>",
@@ -554,12 +568,12 @@ const T = {
     "nav.home":      "Home",
     "nav.services":  "Services",
     "nav.contact":   "Contact me",
-    "hero.tag":      "Copywriter/Stratégie Marketing",
-    "hero.hi":       "Not everyone should see this...",
-    "hero.main":     "but you should",
-    "hero.subtitle": "Aaron <em>Copywriting</em>",
-    "hero.desc":     "Agencies, coaches, infopreneurs...<br> You have a solid offer but... it's leaving money on the table <br> Here, you'll discover how every word can make people click, read and most importantly — buy",
-    "hero.scroll":   "Services",
+    "hero.tag":      "Copywriter / Marketing Strategy",
+    "hero.hi":       "The copywriter",
+    "hero.main":     "you've been waiting for",
+    "hero.subtitle": "Aaron — <em>Copywriting</em>",
+    "hero.desc":     "Agency, coach, e-com...<br> Your offer is solid, your client results too<br> But you know your Ads, Emails and funnel could perform better<br>(and you're probably leaving money on the table)",
+    "hero.scroll":   "What I can bring to the table",
     "section.title": "My <em>masterpieces</em>",
     "section.sub":   "Click on a category to discover the projects",
     "footer.rights": "All rights reserved",
@@ -586,13 +600,13 @@ function setLang(l) {
   document.getElementById('nav-home-mobile').textContent   = t('nav.home');
   document.getElementById('nav-services-mobile').textContent = t('nav.services');
   document.getElementById('hero-tag').textContent          = t('hero.tag');
-  document.getElementById('hero-hi').textContent           = t('hero.hi');
   document.getElementById('hero-main').textContent         = t('hero.main');
   document.getElementById('hero-scroll').textContent       = t('hero.scroll');
   document.getElementById('section-sub').textContent       = t('section.sub');
   document.getElementById('footer-rights').textContent     = t('footer.rights');
 
   // Textes avec balises HTML (innerHTML)
+  document.getElementById('hero-hi').innerHTML             = t('hero.hi');
   document.getElementById('hero-subtitle').innerHTML       = t('hero.subtitle');
   document.getElementById('hero-desc').innerHTML           = t('hero.desc');
   document.getElementById('section-title').innerHTML       = t('section.title');
@@ -634,7 +648,7 @@ const CATEGORIES = [
   },
   {
     id: "youtube",
-    icon: '<img src="youtube.png" style="width:100px;height:100px;object-fit:contain;" onerror="this.outerHTML=\'▶️\'">',
+    icon: '<img src="youtube.png" style="width:125px;height:125px;object-fit:contain;" onerror="this.outerHTML=\'▶️\'">',
     label: { fr: "YouTube Content", en: "YouTube Content" },
     projects: [
       { name: "Mého Guster — e-commerce", url: "https://docs.google.com/document/d/15khLUKWd_jYspBX5h1evP7ucjSocDeFQrjpQ1oO3IjM/edit?usp=sharing" },
@@ -642,7 +656,7 @@ const CATEGORIES = [
   },
   {
     id: "pages",
-    icon: '<img src="Optin.png" style="width:100px;height:100px;object-fit:contain;" onerror="this.outerHTML=\'📄\'">',
+    icon: '<img src="Optin.png" style="width:110px;height:110px;object-fit:contain;" onerror="this.outerHTML=\'📄\'">',
     label: { fr: "Optin", en: "Optin" },
     projects: [
       { name: "Kamil Hareb - Expert Airbnb", url: "https://docs.google.com/document/u/0/d/179GEY-znqoYqarW0CLdUuLpfIjjTB2kRRuP3O_yf3Qg/edit" },
@@ -650,7 +664,7 @@ const CATEGORIES = [
   },
   {
     id: "reels",
-    icon: '<img src="Reels.png" style="width:100px;height:100px;object-fit:contain;" onerror="this.outerHTML=\'🎥\'">',
+    icon: '<img src="Reels.png" style="width:110px;height:110px;object-fit:contain;" onerror="this.outerHTML=\'🎥\'">',
     label: { fr: "Reels", en: "Reels" },
     projects: [
       { name: "Relation & Séduction", url: "https://docs.google.com/document/u/0/d/1uB1aTKy5r3upN8LGIXWn26tvQrKI9zxe38_pv-e5Z5U/edit" },
@@ -661,7 +675,7 @@ const CATEGORIES = [
   },
   {
     id: "linkedin",
-    icon: '<img src="in.png" style="width:100px;height:100px;object-fit:contain;" onerror="this.outerHTML=\'💼\'">',
+    icon: '<img src="in.png" style="width:110px;height:110px;object-fit:contain;" onerror="this.outerHTML=\'💼\'">',
     label: { fr: "Post LinkedIn", en: "LinkedIn Post" },
     projects: [
       { name: "Lead Gen", url: "https://docs.google.com/document/u/0/d/1hzRtnL_vRD3f3KUIGHOcOwBPHNVb3MgoSa8Ja4NjJso/edit" },
@@ -669,7 +683,7 @@ const CATEGORIES = [
   },
   {
     id: "funnel",
-    icon: '<img src="funnel.png" style="width:100px;height:100px;object-fit:contain;" onerror="this.outerHTML=\'🔁\'">',
+    icon: '<img src="funnel.png" style="width:110px;height:110px;object-fit:contain;" onerror="this.outerHTML=\'🔁\'">',
     label: { fr: "Funnel de vente", en: "Sales Funnel" },
     projects: [
       { name: "Lead magnet", url: "https://docs.google.com/document/u/0/d/1zFwViiS_V9QmJpvdeYJJv-k6lM7GZ0MzXaF9xndVf7M/edit" },
