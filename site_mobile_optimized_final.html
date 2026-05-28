@@ -925,59 +925,239 @@
   @media (max-width: 1024px) {
     .port-grid { grid-template-columns: repeat(3,1fr); }
   }
-  @media (max-width: 768px) {
-    nav { padding:0 16px; }
-    .nav-links { display:none; }
-    .burger { display:flex; }
-    main { padding: calc(var(--nav-h) + 8px) 10px 10px; }
-    .grid { gap:10px; }
+  
+@media (max-width: 768px) {
+  nav { padding:0 16px; }
+  .nav-links { display:none; }
+  .burger { display:flex; }
 
-    .hero-card { min-height:auto; padding:24px 20px 32px; border-radius:20px; }
-    .hero-body { grid-template-columns:1fr; gap:24px; padding:16px 0 0; }
-    .hero-photo { order:-1; aspect-ratio:16/10; border-radius:14px; }
-    .hero-title { font-size:36px; }
-    .hero-sub { font-size:13px; max-width:100%; }
-    .hero-cta-wrap { flex-direction:column; gap:10px; }
-    .btn-primary, .btn-ghost { width:100%; justify-content:center; padding:15px 20px; }
-    .hero-bg-text { font-size:120px; }
-
-    .stat-card { grid-column:span 6; padding:18px 14px; min-height:130px; border-radius:16px; }
-    .stat-num { font-size:38px; }
-
-    .section-intro { padding:40px 4px 10px; }
-    .section-title { font-size:40px; }
-    .section-intro-inner { flex-direction:column; align-items:flex-start; gap:12px; }
-
-    .services-card { padding: 0 20px; border-radius:20px; }
-    .service-row { grid-template-columns: 1fr auto; gap:12px; padding:18px 0; align-items:center; }
-    .svc-num { grid-column:1/-1; font-size:10px; color:var(--blue); margin-bottom:-6px; }
-    .svc-desc { display:none; }
-    .svc-name { font-size:20px; }
-    .service-row::before { left:-20px; right:-20px; }
-    .svc-arrow { padding:8px 12px; font-size:11px; }
-
-    .about-text-card { grid-column:span 12; padding:28px 22px; min-height:auto; border-radius:20px; }
-    .about-photo-card { grid-column:span 12; min-height:320px; border-radius:20px; }
-    .about-lead { font-size:20px; }
-    .ig-text-card { grid-column:span 12; padding:28px 22px; min-height:auto; border-radius:20px; }
-    .ig-headline { font-size:34px; }
-    .phone-card { grid-column:span 12; min-height:520px; border-radius:20px; }
-    .phone-mockup { transform:rotate(0); }
-    .phone-mockup:hover { transform:rotate(0) scale(1.02); }
-    .video-grid { grid-template-columns:1fr; gap:10px; }
-    .video-card { max-height:65vh; }
-
-    .final-cta { padding:60px 20px; min-height:auto; border-radius:20px; }
-    .cta-title { font-size:56px; margin-bottom:28px; }
-    .cta-bg-text { font-size:110px; }
-    .btn-primary.cta-btn { width:100%; justify-content:center; }
-
-    footer { flex-direction:column; text-align:center; padding:24px 16px; font-size:10px; }
-    .footer-right { flex-direction:column; gap:8px; }
+  main {
+    padding: calc(var(--nav-h) + 8px) 10px 10px;
   }
-  @media (max-width: 420px) {
-    .hero-title { font-size:30px; }
-    .cta-title { font-size:46px; }
+
+  .grid {
+    gap:10px;
+  }
+
+  .hero-card {
+    min-height:auto;
+    padding:24px 20px 32px;
+    border-radius:20px;
+  }
+
+  .hero-body {
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+    padding:10px 0 0;
+  }
+
+  .hero-photo-wrap {
+    order:-1;
+    width:100%;
+  }
+
+  .hero-photo {
+    width:100%;
+    aspect-ratio:2.2/1;
+    min-height:230px;
+    border-radius:20px;
+    overflow:hidden;
+  }
+
+  .hero-photo img {
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center 20%;
+  }
+
+  .hero-title {
+    font-size:46px;
+    line-height:.92;
+    letter-spacing:-0.05em;
+  }
+
+  .hero-sub {
+    font-size:13px;
+    max-width:100%;
+    line-height:1.7;
+    margin-top:16px;
+  }
+
+  .hero-cta-wrap {
+    flex-direction:column;
+    gap:10px;
+  }
+
+  .btn-primary,
+  .btn-ghost {
+    width:100%;
+    justify-content:center;
+    padding:15px 20px;
+  }
+
+  .hero-bg-text {
+    font-size:120px;
+  }
+
+  .stat-card,
+  .marquee-stat {
+    grid-column:span 6;
+    padding:18px 14px;
+    min-height:130px;
+    border-radius:16px;
+  }
+
+  .formats-marquee-wrap {
+    mask:none;
+    -webkit-mask:none;
+  }
+
+  .format-pill {
+    font-size:9px;
+    padding:5px 10px;
+  }
+
+  .stat-num {
+    font-size:38px;
+  }
+
+  .section-intro {
+    padding:40px 4px 10px;
+  }
+
+  .section-title {
+    font-size:40px;
+  }
+
+  .section-intro-inner {
+    flex-direction:column;
+    align-items:flex-start;
+    gap:12px;
+  }
+
+  .services-card {
+    padding:0 20px;
+    border-radius:20px;
+  }
+
+  .service-row {
+    grid-template-columns:1fr auto;
+    gap:12px;
+    padding:18px 0;
+    align-items:center;
+  }
+
+  .svc-num {
+    grid-column:1/-1;
+    font-size:10px;
+    color:var(--blue);
+    margin-bottom:-6px;
+  }
+
+  .svc-desc {
+    display:none;
+  }
+
+  .svc-name {
+    font-size:20px;
+  }
+
+  .service-row::before {
+    left:-20px;
+    right:-20px;
+  }
+
+  .svc-arrow {
+    padding:8px 12px;
+    font-size:11px;
+  }
+
+  .about-text-card,
+  .ig-text-card {
+    grid-column:span 12;
+    padding:28px 22px;
+    min-height:auto;
+    border-radius:20px;
+  }
+
+  .about-photo-card {
+    grid-column:span 12;
+    min-height:320px;
+    border-radius:20px;
+  }
+
+  .about-lead {
+    font-size:20px;
+  }
+
+  .ig-headline {
+    font-size:34px;
+  }
+
+  .phone-card {
+    grid-column:span 12;
+    min-height:520px;
+    border-radius:20px;
+  }
+
+  .phone-mockup {
+    transform:rotate(0);
+  }
+
+  .phone-mockup:hover {
+    transform:rotate(0) scale(1.02);
+  }
+
+  .video-grid {
+    grid-template-columns:1fr;
+    gap:18px;
+    justify-items:center;
+  }
+
+  .video-card {
+    width:100%;
+    max-width:340px;
+    max-height:65vh;
+  }
+
+  .final-cta {
+    padding:60px 20px;
+    min-height:auto;
+    border-radius:20px;
+  }
+
+  .cta-title {
+    font-size:56px;
+    margin-bottom:28px;
+  }
+
+  .cta-bg-text {
+    font-size:110px;
+  }
+
+  .btn-primary.cta-btn {
+    width:100%;
+    justify-content:center;
+  }
+
+  footer {
+    flex-direction:column;
+    text-align:center;
+    padding:24px 16px;
+    font-size:10px;
+  }
+
+  .footer-right {
+    flex-direction:column;
+    gap:8px;
+  }
+}
+@media (max-width: 420px)
+ {
+    .hero-title { font-size:38px; }
+    .cta-title { font-size:48px; }
     .stat-num { font-size:32px; }
     .port-grid { grid-template-columns:1fr; }
   }
@@ -1055,7 +1235,10 @@
         </div>
         <div class="hero-photo-wrap">
           <div class="hero-photo" id="heroPhoto">
-            <img src="site.png" alt="Aaron" onerror="this.parentElement.innerHTML='<div class=\'hero-photo-placeholder\'><span>A</span></div>'">
+        <picture>
+           <source media="(max-width: 768px)" srcset="pppp.jpg">
+           <img src="site.png" alt="Aaron">
+         </picture>
           </div>
         </div>
       </div>
@@ -1493,22 +1676,22 @@ function renderCards() {
 
   const serviceData = {
     fr: [
-      { name: '', italic: 'VSL',       desc: 'Structures complètes, angles, storytelling et scripts vidéo pour convertir du cold au chaud.' },
+      { name: 'VSL', italic: '/Vidéo de vente',       desc: 'Structures complètes, angles, storytelling et scripts vidéo pour convertir du cold au chaud.' },
       { name: 'Séquences',      italic: 'emails',       desc: 'Welcome sequences, vente, panier abandonné. De l\'opt-in au closing.' },
-      { name: '',               italic: 'Ads',          desc: 'Meta, Pinterest, TikTok. Hooks qui arrêtent le scroll, angles qui convertissent.' },
+      { name: 'Ads',               italic: '/Publicité',          desc: 'Meta, Pinterest, TikTok. Hooks qui arrêtent le scroll, angles qui convertissent.' },
       { name: 'Scripts vidéos', italic: 'YouTube',      desc: 'Structures qui retiennent l\'attention jusqu\'au bout. Hook, storytelling, CTA naturel.' },
-      { name: '',               italic: 'Optin',     desc: 'Conçues pour capter l’attention et transformer votre trafic en leads qualifiés.' },
+      { name: 'Optin',               italic: '/Landing page',     desc: 'Conçues pour capter l’attention et transformer votre trafic en leads qualifiés.' },
       { name: 'Reels',      italic: 'IG',      desc: 'Hooks percutants, structures courtes pour maximiser les vues et l\'engagement.' },
       { name: 'Post',           italic: 'LinkedIn',     desc: 'Posts d\'autorité pour générer du lead et asseoir ton personal brand.' },
       { name: 'Funnel de',      italic: 'vente',        desc: 'Séquences de vente complètes — du lead magnet au closing.' },
       { name: 'Content',        italic: 'Visual',       desc: 'Copywriting visuel pour arrêter le scroll et convertir l\'attention en autorité.' },
     ],
     en: [
-      { name: '',    italic: 'VSL',        desc: 'Full scripts — structure, storytelling and angle to convert cold traffic.' },
+      { name: 'VSL',    italic: '/Video Sales Letter',        desc: 'Full scripts — structure, storytelling and angle to convert cold traffic.' },
       { name: 'Email',          italic: 'sequences',    desc: 'Welcome, sales, abandoned cart sequences. From opt-in to closing.' },
-      { name: '',               italic: 'Ads',          desc: 'Meta, Pinterest, TikTok. Scroll-stopping hooks and converting angles.' },
+      { name: 'Ads',               italic: '',          desc: 'Meta, Pinterest, TikTok. Scroll-stopping hooks and converting angles.' },
       { name: 'Video scripts',  italic: 'YouTube',      desc: 'Scripts that hold attention — hook, narrative, natural CTA.' },
-      { name: '',               italic: 'Optin',     desc: 'Sharp hooks and short structures to maximise views and engagement.' },
+      { name: 'Optin',               italic: '/Landing page',     desc: 'Sharp hooks and short structures to maximise views and engagement.' },
       { name: 'REELS',               italic: 'IG',      desc: 'Narrative frameworks to nurture, qualify and close your audience.' },
       { name: '',               italic: 'LinkedIn',     desc: 'Authority posts to generate leads and build your personal brand.' },
       { name: 'Sales',          italic: 'Funnel',       desc: 'Complete sales sequences — from lead magnet to closing.' },
