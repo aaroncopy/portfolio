@@ -732,15 +732,19 @@
     max-height: 480px;
   }
   .video-card:hover { transform: translateY(-6px); border-color: var(--blue); box-shadow: 0 20px 50px var(--blue-glow); }
+  /* FIX MOBILE : la vidéo doit être au-dessus du placeholder */
   .video-card video {
     position: absolute; inset:0; width:100%; height:100%;
     object-fit: cover; display:block; border-radius:24px;
+    z-index: 2;
   }
   .video-placeholder {
     position:absolute; inset:0;
     background: radial-gradient(circle at 50% 40%, rgba(0,108,224,0.18) 0%, transparent 60%),
                 linear-gradient(180deg,#1a1a1a 0%,#000 100%);
     display:flex; align-items:center; justify-content:center;
+    z-index: 1;
+    pointer-events: none;
   }
   .play-btn {
     width:70px; height:70px; border-radius:50%;
@@ -761,6 +765,7 @@
     position:absolute; bottom:0; left:0; right:0; padding:20px;
     background: linear-gradient(180deg,transparent 0%,rgba(0,0,0,0.88) 60%);
     color:#fff;
+    z-index: 3;
   }
   .video-tag {
     position:absolute; top:14px; left:14px;
@@ -769,7 +774,7 @@
     border: 1px solid var(--blue); border-radius:100px;
     font-family:'JetBrains Mono',monospace;
     font-size:9px; letter-spacing:.1em;
-    color:var(--blue-bright); text-transform:uppercase; z-index:2;
+    color:var(--blue-bright); text-transform:uppercase; z-index:4;
   }
   .video-name {
     font-family:'Archivo Black',sans-serif;
@@ -871,8 +876,8 @@
     border-bottom:1px solid rgba(255,255,255,0.06);
   }
   .modal-title-wrap { display:flex; align-items:center; gap:12px; }
-  .modal-icon { font-size:1.4rem; }
-  .modal-icon img { width:26px; height:26px; object-fit:contain; }
+  .modal-icon { font-size:1.4rem; display:flex; align-items:center; }
+  .modal-icon img { width:36px; height:36px; object-fit:contain; display:block; }
   .modal-title { font-family:'Archivo Black',sans-serif; font-size:1.25rem; letter-spacing:-0.03em; text-transform:uppercase; }
   .modal-close {
     width:32px; height:32px; border:1px solid rgba(255,255,255,0.1);
@@ -1428,7 +1433,7 @@
       <div class="video-grid">
         <div class="video-card">
           <div class="video-tag" id="testi-tag-1">Témoignage</div>
-          <video controls preload="metadata" playsinline>
+          <video controls preload="metadata" playsinline webkit-playsinline>
             <source src="1.mp4" type="video/mp4">
           </video>
           <div class="video-placeholder" id="vp1">
@@ -1441,7 +1446,7 @@
         </div>
         <div class="video-card">
           <div class="video-tag" id="testi-tag-2">Témoignage</div>
-          <video controls preload="metadata" playsinline>
+          <video controls preload="metadata" playsinline webkit-playsinline>
             <source src="2.mp4" type="video/mp4">
           </video>
           <div class="video-placeholder" id="vp2">
@@ -1454,7 +1459,7 @@
         </div>
         <div class="video-card">
           <div class="video-tag" id="testi-tag-3">Témoignage</div>
-          <video controls preload="metadata" playsinline>
+          <video controls preload="metadata" playsinline webkit-playsinline>
             <source src="3.mp4" type="video/mp4">
           </video>
           <div class="video-placeholder" id="vp3">
@@ -1520,53 +1525,45 @@ const T = {
     "stat.2.l":"Projets","stat.2.s":"Projets\nréalisés",
     "stat.3.l":"Production","stat.3.s":"Emails & Ads\nrédigés",
     "stat.4.l":"Formats","stat.4.s":"Full-stack\ncopywriter",
-    "port.label":"/ 01 — Portfolio","port.title":"Mes <em>chefs-<br>d'œuvre.</em>","port.right":"Clique pour\nvoir les projets",
-    "testi.label":"/ 02 — Témoignages","testi.title":"Ils en <em>parlent</em><br>mieux que moi.","testi.right":"Vidéos clients\nauthentiques",
+    "about.label":"/ 01 — À propos","about.title":"À <em>propos</em><br>de moi.","about.right":"Copywriter\ndepuis 2025",
+    "about.lead":"Je m'appelle <span>Aaron.</span> Et cela fait plus d'un an que j'ai commencé le copywriting.",
+    "about.p1":"J'ai pu accumuler une solide expérience avec les <strong>ceennntaines d'heures</strong> passées à écrire, analyser et retravailler des pages de vente, emails et contenus marketing sur le marché français.",
+    "about.p2":"J'ai travaillé pour des clients dans des <strong>niches variées</strong> — du coaching business à l'e-commerce, en passant par le sport et la séduction.",
+    "about.p3":"Aujourd'hui, je mets mes compétences au service de ceux qui veulent <em>convertir plus et vendre mieux.</em>",
+    "about.tag":"France · 2025",
+    "port.label":"/ 02 — Portfolio","port.title":"Mes <em>chefs-<br>d'œuvre.</em>","port.right":"Clique pour\nvoir les projets",
+    "ig.label":"/ 03 — Instagram","ig.title":"Sur <em>Instagram.</em>","ig.right":"@aaron.copywriting\nTémoignages · Cases",
+    "ig.headline":"Témoignages,<br>cases & <em>coulisses.</em>","ig.handle":"@aaron.copywriting","ig.btn":"Suivre sur Instagram",
+    "testi.label":"/ 04 — Témoignages","testi.title":"Ils en <em>parlent</em><br>mieux que moi.","testi.right":"Vidéos clients\nauthentiques",
+    "testi.tag":"Témoignage",
     "cta.label":"Ready when you are","cta.title":"On <em>parle</em> ?","cta.btn":"Réserver un appel",
     "footer":"© 2026 Aaron · Copywriter",
     "modal.empty":"Aucun projet disponible pour l'instant.","btn.voir":"Voir",
-    "word.project":"projet","word.projects":"projets",
-    "cat.vsl":"VSL","cat.emails":"Emails","cat.ads":"Ads","cat.youtube":"YouTube Content",
-    "cat.optin":"Optin","cat.reels":"Reels","cat.linkedin":"Post LinkedIn",
-    "cat.funnel":"Funnel de vente","cat.visual":"Content Visual",
-    "cat.vsl.desc":"Scripts vidéo complets — structure, storytelling et angle pour convertir du froid au chaud.",
-    "cat.emails.desc":"Welcome sequences, vente, panier abandonné. De l'opt-in au closing.",
-    "cat.ads.desc":"Meta, TikTok, Pinterest. Hooks qui stoppent le scroll, angles qui convertissent.",
-    "cat.youtube.desc":"Scripts retenus jusqu'au bout — hook, narration, CTA naturel.",
-    "cat.optin.desc":"Pages de capture optimisées pour maximiser les leads qualifiés.",
-    "cat.reels.desc":"Hooks percutants et structures courtes pour maximiser les vues et l'engagement.",
-    "cat.linkedin.desc":"Posts d'autorité pour générer du lead et asseoir ton personal brand.",
-    "cat.funnel.desc":"Séquences de vente complètes — du lead magnet au closing.",
-    "cat.visual.desc":"Copywriting visuel pour arrêter le scroll et convertir l'attention en autorité.",
   },
   en: {
     "nav.home":"Home","nav.services":"Services","nav.testi":"Testimonials","nav.cta":"Book a call",
     "hero.badge":"Available · 2026","hero.meta":"Portfolio · 2026\nAaron · Copywriter",
-    "hero.title":"The copywriter<br>you've been <span class='blue'>waiting for</span><br><span class='serif'>all along.</span>",
+    "hero.title":"The copywriter<br>your <span class='blue'>business</span><br><span class='serif'>has been waiting for.</span>",
     "hero.desc":"Agency, coach, e-com... Your offer is solid, your client results too.<br>But you know your <strong>Ads, Emails and funnel</strong> could perform better —<br>and you're probably leaving money on the table.",
     "hero.cta":"Book a call","hero.ghost":"See projects ↓",
     "stat.1.l":"Experience","stat.1.s":"Year of\ncopywriting",
     "stat.2.l":"Projects","stat.2.s":"Projects\ncompleted",
-    "stat.3.l":"Formats","stat.3.s":"Formats\nmastered",
+    "stat.3.l":"Output","stat.3.s":"Emails & Ads\nwritten",
     "stat.4.l":"Specialties","stat.4.s":"Full-stack\ncopywriter",
-    "port.label":"/ 01 — Portfolio","port.title":"My <em>master-<br>pieces.</em>","port.right":"Click to\nsee projects",
-    "testi.label":"/ 02 — Testimonials","testi.title":"They say it<br>better than <em>me.</em>","testi.right":"Authentic\nclient videos",
-    "cta.label":"Ready when you are","cta.title":"Let's <em>talk</em>?","cta.btn":"Book a call",
+    "about.label":"/ 01 — About","about.title":"About <em>me.</em>","about.right":"Copywriter\nsince 2025",
+    "about.lead":"My name is <span>Aaron.</span> I've been writing copy for over a year now.",
+    "about.p1":"I've built solid experience through <strong>hundreds of hours</strong> spent writing, analysing and refining sales pages, emails and marketing content for the French market.",
+    "about.p2":"I've worked with clients across <strong>various niches</strong> — from business coaching to e-commerce, fitness and seduction.",
+    "about.p3":"Today, I put my skills to work for those who want to <em>convert more and sell better.</em>",
+    "about.tag":"France · 2025",
+    "port.label":"/ 02 — Portfolio","port.title":"My <em>master-<br>pieces.</em>","port.right":"Click to\nsee projects",
+    "ig.label":"/ 03 — Instagram","ig.title":"On <em>Instagram.</em>","ig.right":"@aaron.copywriting\nTestimonials · Cases",
+    "ig.headline":"Testimonials,<br>cases & <em>behind the scenes.</em>","ig.handle":"@aaron.copywriting","ig.btn":"Follow on Instagram",
+    "testi.label":"/ 04 — Testimonials","testi.title":"They say it<br>better than <em>me.</em>","testi.right":"Authentic\nclient videos",
+    "testi.tag":"Testimonial",
+    "cta.label":"Ready when you are","cta.title":"Let's <em>talk?</em>","cta.btn":"Book a call",
     "footer":"© 2026 Aaron · Copywriter",
     "modal.empty":"No projects available yet.","btn.voir":"View",
-    "word.project":"project","word.projects":"projects",
-    "cat.vsl":"VSL","cat.emails":"Emails","cat.ads":"Ads","cat.youtube":"YouTube Content",
-    "cat.optin":"Optin","cat.reels":"Reels","cat.linkedin":"LinkedIn Post",
-    "cat.funnel":"Sales Funnel","cat.visual":"Visual Content",
-    "cat.vsl.desc":"Full video scripts — structure, storytelling and angle to convert cold traffic.",
-    "cat.emails.desc":"Welcome sequences, sales, abandoned cart. From opt-in to closing.",
-    "cat.ads.desc":"Meta, TikTok, Pinterest. Scroll-stopping hooks and converting angles.",
-    "cat.youtube.desc":"Scripts that hold attention — hook, narrative, natural CTA.",
-    "cat.optin.desc":"Capture pages optimised to maximise qualified leads.",
-    "cat.reels.desc":"Sharp hooks and short structures to maximise views and engagement.",
-    "cat.linkedin.desc":"Authority posts to generate leads and build your personal brand.",
-    "cat.funnel.desc":"Complete sales sequences — from lead magnet to closing.",
-    "cat.visual.desc":"Visual copywriting to stop the scroll and convert attention into authority.",
   }
 };
 let lang = 'fr';
@@ -1577,6 +1574,7 @@ function setLang(l) {
   document.documentElement.lang = l;
   document.getElementById('btnFR').classList.toggle('active', l==='fr');
   document.getElementById('btnEN').classList.toggle('active', l==='en');
+
   // Nav
   document.getElementById('nav-home').textContent = t('nav.home');
   document.getElementById('nav-services').textContent = t('nav.services');
@@ -1586,6 +1584,7 @@ function setLang(l) {
   document.getElementById('nav-services-m').textContent = t('nav.services');
   document.getElementById('nav-testi-m').textContent = t('nav.testi');
   document.getElementById('nav-cta-m').textContent = t('nav.cta');
+
   // Hero
   document.getElementById('hero-badge-text').textContent = t('hero.badge');
   document.getElementById('hero-meta').innerHTML = t('hero.meta').replace('\n','<br>');
@@ -1593,6 +1592,7 @@ function setLang(l) {
   document.getElementById('hero-desc').innerHTML = t('hero.desc');
   document.getElementById('hero-cta-text').textContent = t('hero.cta');
   document.getElementById('hero-ghost').textContent = t('hero.ghost');
+
   // Stats
   document.getElementById('stat-1-label').textContent = t('stat.1.l');
   document.getElementById('stat-1-sub').innerHTML = t('stat.1.s').replace('\n','<br>');
@@ -1602,36 +1602,66 @@ function setLang(l) {
   document.getElementById('stat-3-sub').innerHTML = t('stat.3.s').replace('\n','<br>');
   document.getElementById('stat-4-label').textContent = t('stat.4.l');
   document.getElementById('stat-4-sub').innerHTML = t('stat.4.s').replace('\n','<br>');
+
+  // About
+  document.getElementById('about-label').textContent = t('about.label');
+  document.getElementById('about-title').innerHTML = t('about.title');
+  document.getElementById('about-right').innerHTML = t('about.right').replace('\n','<br>');
+  document.getElementById('about-lead').innerHTML = t('about.lead');
+  document.getElementById('about-p1').innerHTML = t('about.p1');
+  document.getElementById('about-p2').innerHTML = t('about.p2');
+  document.getElementById('about-p3').innerHTML = t('about.p3');
+  document.getElementById('about-tag').textContent = t('about.tag');
+
   // Portfolio section
   document.getElementById('port-section-label').textContent = t('port.label');
   document.getElementById('port-section-title').innerHTML = t('port.title');
   document.getElementById('port-section-right').innerHTML = t('port.right').replace('\n','<br>');
-  // Testi section
+
+  // Instagram section
+  document.getElementById('ig-label').textContent = t('ig.label');
+  document.getElementById('ig-title').innerHTML = t('ig.title');
+  document.getElementById('ig-right').innerHTML = t('ig.right').replace('\n','<br>');
+  document.getElementById('ig-headline').innerHTML = t('ig.headline');
+  document.getElementById('ig-handle').textContent = t('ig.handle');
+  document.getElementById('ig-btn-text').textContent = t('ig.btn');
+
+  // Testimonials section
   document.getElementById('testi-label').textContent = t('testi.label');
   document.getElementById('testi-title').innerHTML = t('testi.title');
   document.getElementById('testi-right').innerHTML = t('testi.right').replace('\n','<br>');
+  document.getElementById('testi-tag-1').textContent = t('testi.tag');
+  document.getElementById('testi-tag-2').textContent = t('testi.tag');
+  document.getElementById('testi-tag-3').textContent = t('testi.tag');
+
   // CTA
   document.getElementById('cta-label').textContent = t('cta.label');
   document.getElementById('cta-title').innerHTML = t('cta.title');
   document.getElementById('cta-btn-text').textContent = t('cta.btn');
+
+  // Footer
   document.getElementById('footer-copy').textContent = t('footer');
+
   renderCards();
 }
 
 /* ── CATEGORIES ── */
+// FIX ICÔNES : taille harmonisée à 36px pour toutes les images (cohérence visuelle)
+const ICON_SIZE = 'width:72px;height:72px;object-fit:contain;display:block;';
+
 const CATEGORIES = [
-  { id:"vsl", icon:'<img src="keting.png" style="width:70px;height:70px;object-fit:contain;">', key:"cat.vsl",
+  { id:"vsl",     icon:`<img src="keting.png" style="${ICON_SIZE}">`, key:"cat.vsl",
     projects:[
       {name:"Tacio - STUDIO CLUB PRO",url:"https://docs.google.com/document/u/0/d/1-Bue4hZe3KWe1rRRPoPmtLKPEpYBPrkjdffGxe_9Tdg/edit"},
       {name:"Thomas - Rentabl",url:"https://docs.google.com/document/u/0/d/1Yu1-XE6KC9v4ne8Am967KokHEKo5PQ2quq9KsAYKh8c/edit"},
     ]},
-  { id:"emails", icon:'<img src="mails.png" style="width:70px;height:70px;object-fit:contain;">', key:"cat.emails",
+  { id:"emails",  icon:`<img src="mails.png" style="width:112px;height:112px;object-fit:contain;display:block;">`, key:"cat.emails",
     projects:[
       {name:"Séquence de bienvenue - copywriting",url:"https://docs.google.com/document/u/0/d/1j_rEfTZ43TWMVFec9qFHEwOKscaHIG6dUOHVBIQULXw/edit"},
       {name:"Séquence de vente - Fitness",url:"https://docs.google.com/document/u/0/d/1XcsoJrzBKR47q1__OkKQcAku8-XgM-6HbOksAv0Inlc/edit"},
       {name:"Séquence panier abandonné - Fitness",url:"https://docs.google.com/document/u/0/d/1jMCbMbXPO4al7fXwSfglrwhVHsJKul_pTPiB7HaEML8/edit"},
     ]},
-  { id:"pubs", icon:'<img src="Ads.png" style="width:70px;height:70px;object-fit:contain;">', key:"cat.ads",
+  { id:"pubs",    icon:`<img src="Ads.png" style="width:82px;height:82px;object-fit:contain;display:block;">`, key:"cat.ads",
     projects:[
       {name:"Lucas Guitare",url:"https://docs.google.com/document/u/0/d/1pgrNJ4iOM-ajaoz_As4r8Fk3ytP6jkMKNpK4vh9Rk8M/edit"},
       {name:"Enzo Geromegnace",url:"https://docs.google.com/document/u/0/d/1an1a2hBV64mEw1JUm-gGwRlvnKsbiQuQ3YPM9R-f1Wg/edit"},
@@ -1639,67 +1669,73 @@ const CATEGORIES = [
       {name:"Professeur de maths",url:"https://docs.google.com/document/u/0/d/12yckzdskfBodODzp19_YikKXdWXvHqWtzXBfhU8isbs/edit"},
       {name:"Jessim - Coach Sportif",url:"https://docs.google.com/document/d/1MaP4gPH91S4jTP88jjyAebyssPoH-gf5qrWMUCceWxA/edit?usp=sharing"},
     ]},
-  { id:"youtube", icon:'<img src="youtube.png" style="width:70px;height:70px;object-fit:contain;">', key:"cat.youtube",
+  { id:"youtube", icon:`<img src="youtube.png" style="width:112px;height:112px;object-fit:contain;display:block;">`, key:"cat.youtube",
     projects:[
       {name:"Mého Guster — E-commerce",url:"https://docs.google.com/document/d/15khLUKWd_jYspBX5h1evP7ucjSocDeFQrjpQ1oO3IjM/edit?usp=sharing"},
       {name:"Jessim - Coach Sportif",url:"https://docs.google.com/document/d/1ORv3QdwXcO4Eq82ujhQRa-R5cNVTn4y2x8wMpF-Ymzk/edit?usp=sharing"},
     ]},
-  { id:"pages", icon:'<img src="Optin.png" style="width:70px;height:70px;object-fit:contain;">', key:"cat.optin",
+  { id:"pages",   icon:`<img src="Optin.png" style="width:112px;height:112px;object-fit:contain;display:block;">`, key:"cat.optin",
     projects:[
       {name:"Kamil Hareb - Expert Airbnb",url:"https://docs.google.com/document/u/0/d/179GEY-znqoYqarW0CLdUuLpfIjjTB2kRRuP3O_yf3Qg/edit"},
     ]},
-  { id:"reels", icon:'<img src="Reels.png" style="width:70px;height:70px;object-fit:contain;">', key:"cat.reels",
+  { id:"reels",   icon:`<img src="Reels.png" style="width:82px;height:82px;object-fit:contain;display:block;">`, key:"cat.reels",
     projects:[
       {name:"Relation & Séduction",url:"https://docs.google.com/document/u/0/d/1uB1aTKy5r3upN8LGIXWn26tvQrKI9zxe38_pv-e5Z5U/edit"},
       {name:"Éducation Canine",url:"https://docs.google.com/document/u/0/d/1PzHJRr1IHmwGLa8lFd1c-Ng9cDKSxltr_aUWulaUkcw/edit"},
       {name:"Tom & Seb - Coach Sportif",url:"https://docs.google.com/document/u/0/d/1zPnzWVGgeNib4-8nxxZCrRoVTYNyRqMqBOxhxsKiOfw/edit"},
       {name:"Coach business",url:"https://docs.google.com/document/u/0/d/1s8gslJOFA6X-OTNH_zXkKmlv-1ViUCHG9CDKOE8Hjqs/edit"},
     ]},
-  { id:"linkedin", icon:'<img src="in.png" style="width:70px;height:70px;object-fit:contain;">', key:"cat.linkedin",
+  { id:"linkedin",icon:`<img src="in.png" style="${ICON_SIZE}">`, key:"cat.linkedin",
     projects:[
       {name:"Lead Gen",url:"https://docs.google.com/document/u/0/d/1hzRtnL_vRD3f3KUIGHOcOwBPHNVb3MgoSa8Ja4NjJso/edit"},
     ]},
-  { id:"funnel", icon:'<img src="funnel.png" style="width:70px;height:70px;object-fit:contain;">', key:"cat.funnel",
+  { id:"funnel",  icon:`<img src="funnel.png" style="${ICON_SIZE}">`, key:"cat.funnel",
     projects:[
       {name:"Lead magnet",url:"https://docs.google.com/document/u/0/d/1zFwViiS_V9QmJpvdeYJJv-k6lM7GZ0MzXaF9xndVf7M/edit"},
     ]},
-  { id:"visual", icon:'<img src="visual.png" style="width:70px;height:70px;object-fit:contain;">', key:"cat.visual",
+  { id:"visual",  icon:`<img src="visual.png" style="${ICON_SIZE}">`, key:"cat.visual",
     projects:[
       {name:"Saadia_immo_travaux",url:"https://www.canva.com/design/DAHCV2EpEwg/ujIm0grrRC9Ynwh7cHhrKg/edit"},
       {name:"Irisart24",url:"https://aaroncopy.github.io/IrisArt/"},
     ]},
 ];
 
+// Traductions des catégories (noms + descriptions) intégrées directement dans renderCards
+const CAT_LABELS = {
+  fr: [
+    { name: 'VSL',            italic: '/Vidéo de vente',    desc: 'Structures complètes, angles, storytelling et scripts vidéo pour convertir du cold au chaud.' },
+    { name: 'Séquences',      italic: 'emails',             desc: 'Welcome sequences, vente, panier abandonné. De l\'opt-in au closing.' },
+    { name: 'Ads',            italic: '/Publicité',         desc: 'Meta, Pinterest, TikTok. Hooks qui arrêtent le scroll, angles qui convertissent.' },
+    { name: 'Scripts vidéos', italic: 'YouTube',            desc: 'Structures qui retiennent l\'attention jusqu\'au bout. Hook, storytelling, CTA naturel.' },
+    { name: 'Optin',          italic: '/Landing page',      desc: 'Conçues pour capter l\'attention et transformer votre trafic en leads qualifiés.' },
+    { name: 'Reels',          italic: 'IG',                 desc: 'Hooks percutants, structures courtes pour maximiser les vues et l\'engagement.' },
+    { name: 'Post',           italic: 'LinkedIn',           desc: 'Posts d\'autorité pour générer du lead et asseoir ton personal brand.' },
+    { name: 'Funnel de',      italic: 'vente',              desc: 'Séquences de vente complètes — du lead magnet au closing.' },
+    { name: 'Content',        italic: 'Visual',             desc: 'Copywriting visuel pour arrêter le scroll et convertir l\'attention en autorité.' },
+  ],
+  en: [
+    { name: 'VSL',            italic: '/Video Sales Letter', desc: 'Full video scripts — structure, storytelling and angle to convert cold traffic into buyers.' },
+    { name: 'Email',          italic: 'sequences',           desc: 'Welcome, sales and abandoned cart sequences. From opt-in all the way to closing.' },
+    { name: 'Ads',            italic: '/Advertising',        desc: 'Meta, Pinterest, TikTok. Scroll-stopping hooks and angles that actually convert.' },
+    { name: 'Video scripts',  italic: 'YouTube',             desc: 'Scripts that hold attention from start to finish. Hook, storytelling, natural CTA.' },
+    { name: 'Optin',          italic: '/Landing page',       desc: 'Designed to capture attention and turn your traffic into qualified leads.' },
+    { name: 'Reels',          italic: 'IG',                  desc: 'Sharp hooks and short structures to maximise views and drive engagement.' },
+    { name: 'Post',           italic: 'LinkedIn',            desc: 'Authority posts to generate leads and build your personal brand.' },
+    { name: 'Sales',          italic: 'Funnel',              desc: 'Complete sales sequences — from lead magnet to closing.' },
+    { name: 'Visual',         italic: 'Content',             desc: 'Visual copywriting to stop the scroll and convert attention into authority.' },
+  ]
+};
+
+// Traductions des titres de catégories pour le modal
+const CAT_MODAL_TITLES = {
+  fr: ['VSL', 'Emails', 'Ads', 'YouTube Content', 'Optin', 'Reels', 'Post LinkedIn', 'Funnel de vente', 'Content Visual'],
+  en: ['VSL', 'Emails', 'Ads', 'YouTube Content', 'Optin', 'Reels', 'LinkedIn Post', 'Sales Funnel', 'Visual Content'],
+};
+
 function renderCards() {
   const grid = document.getElementById('cardsGrid');
   grid.innerHTML = '';
-
-  const serviceData = {
-    fr: [
-      { name: 'VSL', italic: '/Vidéo de vente',       desc: 'Structures complètes, angles, storytelling et scripts vidéo pour convertir du cold au chaud.' },
-      { name: 'Séquences',      italic: 'emails',       desc: 'Welcome sequences, vente, panier abandonné. De l\'opt-in au closing.' },
-      { name: 'Ads',               italic: '/Publicité',          desc: 'Meta, Pinterest, TikTok. Hooks qui arrêtent le scroll, angles qui convertissent.' },
-      { name: 'Scripts vidéos', italic: 'YouTube',      desc: 'Structures qui retiennent l\'attention jusqu\'au bout. Hook, storytelling, CTA naturel.' },
-      { name: 'Optin',               italic: '/Landing page',     desc: 'Conçues pour capter l’attention et transformer votre trafic en leads qualifiés.' },
-      { name: 'Reels',      italic: 'IG',      desc: 'Hooks percutants, structures courtes pour maximiser les vues et l\'engagement.' },
-      { name: 'Post',           italic: 'LinkedIn',     desc: 'Posts d\'autorité pour générer du lead et asseoir ton personal brand.' },
-      { name: 'Funnel de',      italic: 'vente',        desc: 'Séquences de vente complètes — du lead magnet au closing.' },
-      { name: 'Content',        italic: 'Visual',       desc: 'Copywriting visuel pour arrêter le scroll et convertir l\'attention en autorité.' },
-    ],
-    en: [
-      { name: 'VSL',    italic: '/Video Sales Letter',        desc: 'Full scripts — structure, storytelling and angle to convert cold traffic.' },
-      { name: 'Email',          italic: 'sequences',    desc: 'Welcome, sales, abandoned cart sequences. From opt-in to closing.' },
-      { name: 'Ads',               italic: '',          desc: 'Meta, Pinterest, TikTok. Scroll-stopping hooks and converting angles.' },
-      { name: 'Video scripts',  italic: 'YouTube',      desc: 'Scripts that hold attention — hook, narrative, natural CTA.' },
-      { name: 'Optin',               italic: '/Landing page',     desc: 'Sharp hooks and short structures to maximise views and engagement.' },
-      { name: 'REELS',               italic: 'IG',      desc: 'Narrative frameworks to nurture, qualify and close your audience.' },
-      { name: '',               italic: 'LinkedIn',     desc: 'Authority posts to generate leads and build your personal brand.' },
-      { name: 'Sales',          italic: 'Funnel',       desc: 'Complete sales sequences — from lead magnet to closing.' },
-      { name: 'Visual',         italic: 'Content',      desc: 'Visual copywriting to stop the scroll and convert attention into authority.' },
-    ]
-  };
-
-  const data = serviceData[lang] || serviceData.fr;
+  const data = CAT_LABELS[lang] || CAT_LABELS.fr;
 
   CATEGORIES.forEach((cat, i) => {
     const d = data[i] || {};
@@ -1712,17 +1748,18 @@ function renderCards() {
       <div class="svc-num">/ ${String(i+1).padStart(2,'0')}</div>
       <div class="svc-name">${nameHtml}</div>
       <div class="svc-desc">${d.desc || ''}</div>
-      <div class="svc-arrow">Exemple <span class="arr">↗</span></div>`;
-    row.addEventListener('click', () => openModal(cat));
+      <div class="svc-arrow">${lang === 'en' ? 'Example' : 'Exemple'} <span class="arr">↗</span></div>`;
+    row.addEventListener('click', () => openModal(cat, i));
     grid.appendChild(row);
   });
 }
 
 /* ── MODAL ── */
 const overlay = document.getElementById('modalOverlay');
-function openModal(cat) {
+function openModal(cat, idx) {
   document.getElementById('modalIcon').innerHTML = cat.icon;
-  document.getElementById('modalTitle').textContent = t(cat.key);
+  const titles = CAT_MODAL_TITLES[lang] || CAT_MODAL_TITLES.fr;
+  document.getElementById('modalTitle').textContent = titles[idx] || '';
   const list = document.getElementById('projectList');
   list.innerHTML = '';
   if (!cat.projects.length) {
@@ -1749,15 +1786,11 @@ document.addEventListener('keydown', e => { if (e.key==='Escape') closeModalDire
 
 /* ── VIDEO PLACEHOLDER HIDE ── */
 document.querySelectorAll('.video-card video').forEach((v, i) => {
-  v.addEventListener('loadeddata', () => {
-    const ph = document.getElementById('vp'+(i+1));
-    if (ph) ph.style.display = 'none';
-  });
-  // si la vidéo charge, on cache le placeholder
-  if (v.readyState >= 2) {
-    const ph = document.getElementById('vp'+(i+1));
-    if (ph) ph.style.display = 'none';
-  }
+  const ph = document.getElementById('vp'+(i+1));
+  const hide = () => { if (ph) ph.style.display = 'none'; };
+  v.addEventListener('loadeddata', hide);
+  v.addEventListener('play', hide);
+  if (v.readyState >= 2) hide();
 });
 
 /* ── BURGER ── */
@@ -1783,7 +1816,6 @@ function animateCounter(el) {
   function update(now) {
     const elapsed = now - start;
     const progress = Math.min(elapsed / duration, 1);
-    // easeOutQuart — smooth deceleration without stalling
     const ease = 1 - Math.pow(1 - progress, 4);
     el.textContent = Math.round(ease * target);
     if (progress < 1) requestAnimationFrame(update);
