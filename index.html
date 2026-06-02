@@ -731,13 +731,21 @@
     transition: all .4s;
     max-height: 480px;
   }
-  .video-card:hover { transform: translateY(-6px); border-color: var(--blue); box-shadow: 0 20px 50px var(--blue-glow); }
-  /* FIX MOBILE : la vidéo doit être au-dessus du placeholder */
+.video-card video {
+  position: absolute; inset:0; width:100%; height:100%;
+  object-fit: cover; display:block; border-radius:24px;
+  z-index: 2;
+}
+/* Fix mobile thumbnail */
+@media (max-width: 768px) {
   .video-card video {
-    position: absolute; inset:0; width:100%; height:100%;
-    object-fit: cover; display:block; border-radius:24px;
-    z-index: 2;
+    background: #000;
   }
+  .video-placeholder {
+    display: flex !important;
+    z-index: 1;
+  }
+}
   .video-placeholder {
     position:absolute; inset:0;
     background: radial-gradient(circle at 50% 40%, rgba(0,108,224,0.18) 0%, transparent 60%),
@@ -1250,73 +1258,7 @@
     </div>
 
     <!-- ── STATS ── -->
-    <div class="card-block stat-card reveal" id="sc1">
-      <div class="stat-top" id="stat-1-label">Copywriting</div>
-      <div class="stat-num"><span class="counter" data-target="1">0</span><span class="unit">+</span></div>
-      <div class="stat-label" id="stat-1-sub">Ads & Emails<br>rédigés</div>
-    </div>
-    <div class="card-block stat-card reveal" id="sc2">
-      <div class="stat-top" id="stat-2-label">Projets</div>
-      <div class="stat-num"><span class="counter" data-target="30">0</span><span class="unit">+</span></div>
-      <div class="stat-label" id="stat-2-sub">Projets<br>réalisés</div>
-    </div>
-    <div class="card-block stat-card reveal" id="sc3">
-      <div class="stat-top" id="stat-3-label">Formats</div>
-      <div class="stat-num"><span class="counter" data-target="100">0</span><span class="unit">+</span></div>
-      <div class="stat-label" id="stat-3-sub">Emails & Ads<br>rédigés</div>
-    </div>
-    <div class="card-block marquee-stat reveal">
-      <div class="stat-top" id="stat-4-label">Spécialités</div>
-      <div class="formats-marquee-wrap">
-        <div class="formats-track">
-          <span class="format-pill filled">VSL</span>
-          <span class="format-pill outline">Ads</span>
-          <span class="format-pill ghost">Emails</span>
-          <span class="format-pill filled">Reels</span>
-          <span class="format-pill outline">Funnels</span>
-          <span class="format-pill ghost">LinkedIn</span>
-          <span class="format-pill filled">YouTube</span>
-          <span class="format-pill outline">Optin</span>
-          <span class="format-pill ghost">Stories</span>
-          <span class="format-pill filled">Carrousels</span>
-          <!-- duplicate for seamless loop -->
-          <span class="format-pill filled">VSL</span>
-          <span class="format-pill outline">Ads</span>
-          <span class="format-pill ghost">Emails</span>
-          <span class="format-pill filled">Reels</span>
-          <span class="format-pill outline">Funnel</span>
-          <span class="format-pill ghost">LinkedIn</span>
-          <span class="format-pill filled">YouTube</span>
-          <span class="format-pill outline">Optin</span>
-          <span class="format-pill ghost">Stories</span>
-          <span class="format-pill filled">Carrousels</span>
-        </div>
-        <div class="formats-track formats-track-2">
-          <span class="format-pill ghost">Webinaire</span>
-          <span class="format-pill filled">Scripts</span>
-          <span class="format-pill outline">Newsletter</span>
-          <span class="format-pill ghost">Funnel</span>
-          <span class="format-pill filled">Cold email</span>
-          <span class="format-pill outline">Storytelling</span>
-          <span class="format-pill ghost">Personal brand</span>
-          <span class="format-pill filled">Content</span>
-          <span class="format-pill outline">Hooks</span>
-          <span class="format-pill ghost">Ads</span>
-          <!-- duplicate -->
-          <span class="format-pill ghost">Webinaire</span>
-          <span class="format-pill filled">Scripts</span>
-          <span class="format-pill outline">Newsletter</span>
-          <span class="format-pill ghost">Tunnels</span>
-          <span class="format-pill filled">Cold email</span>
-          <span class="format-pill outline">Storytelling</span>
-          <span class="format-pill ghost">Personal brand</span>
-          <span class="format-pill filled">Content</span>
-          <span class="format-pill outline">Hooks</span>
-          <span class="format-pill ghost">Ads</span>
-        </div>
-      </div>
-      <div class="stat-label-bottom" id="stat-4-sub">Full-stack<br>copywriter</div>
-    </div>
+
 
     <!-- ── ABOUT ── -->
     <div class="section-intro reveal">
@@ -1593,16 +1535,6 @@ function setLang(l) {
   document.getElementById('hero-cta-text').textContent = t('hero.cta');
   document.getElementById('hero-ghost').textContent = t('hero.ghost');
 
-  // Stats
-  document.getElementById('stat-1-label').textContent = t('stat.1.l');
-  document.getElementById('stat-1-sub').innerHTML = t('stat.1.s').replace('\n','<br>');
-  document.getElementById('stat-2-label').textContent = t('stat.2.l');
-  document.getElementById('stat-2-sub').innerHTML = t('stat.2.s').replace('\n','<br>');
-  document.getElementById('stat-3-label').textContent = t('stat.3.l');
-  document.getElementById('stat-3-sub').innerHTML = t('stat.3.s').replace('\n','<br>');
-  document.getElementById('stat-4-label').textContent = t('stat.4.l');
-  document.getElementById('stat-4-sub').innerHTML = t('stat.4.s').replace('\n','<br>');
-
   // About
   document.getElementById('about-label').textContent = t('about.label');
   document.getElementById('about-title').innerHTML = t('about.title');
@@ -1788,9 +1720,8 @@ document.addEventListener('keydown', e => { if (e.key==='Escape') closeModalDire
 document.querySelectorAll('.video-card video').forEach((v, i) => {
   const ph = document.getElementById('vp'+(i+1));
   const hide = () => { if (ph) ph.style.display = 'none'; };
-  v.addEventListener('loadeddata', hide);
+  // On cache le placeholder seulement au play, pas au loadeddata
   v.addEventListener('play', hide);
-  if (v.readyState >= 2) hide();
 });
 
 /* ── BURGER ── */
