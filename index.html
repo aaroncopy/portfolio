@@ -147,7 +147,7 @@
   /* ── HERO ── */
   .hero-card {
     grid-column: span 12;
-    min-height: 320px;
+    min-height: 620px;
     padding: 20px 48px;
     display: flex; flex-direction: column; justify-content: center;
     position: relative; overflow: hidden;
@@ -224,7 +224,7 @@
     border: 1px solid var(--line-blue);
     box-shadow: 0 20px 70px rgba(0,108,224,0.18);
     position: relative;
-    width: 67%;
+    width: 65%;
   }
   .hero-photo img { width:100%; height:100%; object-fit:cover; display:block; }
   .hero-photo::after {
@@ -945,7 +945,7 @@
   }
 
   .hero-card {
-    min-height:auto;
+    min-height:600px;
     padding:24px 20px 32px;
     border-radius:20px;
   }
@@ -1416,7 +1416,7 @@
         <span id="cta-btn-text">Réserver un appel</span>
         <span class="arrow-c">→</span>
       </a>
-      <div class="cta-email">
+      <p id="cta-sub" style="position:relative;z-index:2;font-family:'Archivo',sans-serif;font-size:14px;color:rgba(255,255,255,0.5);margin-top:16px;">(sauf si tu veux continuer à laisser de l'argent sur la table 👀)</p>      <div class="cta-email">
         ou directement : <a href="mailto:aaron.copyy@gmail.com">aaron.copyy@gmail.com</a>
       </div>
     </div>
@@ -1453,19 +1453,16 @@ const T = {
     "nav.home":"Accueil","nav.services":"Prestations","nav.testi":"Témoignages","nav.cta":"Réserver un appel",
     "hero.badge":"Disponible · 2026","hero.meta":"Portfolio · 2026\nAaron · Copywriter",
     "hero.title":"Le copywriter<br>des <span class='blue'>business</span><br><span class='serif'>à 6 chiffres.</span>",
-    "hero.desc":"Agence, coach, e-com... Ton offre est solide, tes résultats clients aussi.<br>Mais tu sais que tes <strong>Ads, Emails et ton tunnel</strong> pourraient mieux performer —<br>et tu laisses sûrement de l'argent sur la table.",
+    "hero.desc":"Je m'appelle <strong>Aaron</strong>, j’aide les entrepreneurs qui veulent<strong> <br>attirer plus de clients</strong>,<strong>vendre plus facilement,</strong> et devenir la <strong> référence de leur marché.</strong>",
     "hero.cta":"Réserver un appel","hero.ghost":"Voir les projets ↓",
     "stat.1.l":"Expérience","stat.1.s":"An de\ncopywriting",
     "stat.2.l":"Projets","stat.2.s":"Projets\nréalisés",
     "stat.3.l":"Production","stat.3.s":"Emails & Ads\nrédigés",
     "stat.4.l":"Formats","stat.4.s":"Full-stack\ncopywriter",
     "about.label":"/ 01 — À propos","about.title":"À <em>propos</em><br>de moi.","about.right":"Copywriter\ndepuis 2025",
-    "about.lead":"Je m'appelle <span>Aaron.</span> Et cela fait plus d'un an que j'ai commencé le copywriting.",
-    "about.p1":"J'ai pu accumuler une solide expérience avec les <strong>ceennntaines d'heures</strong> passées à écrire, analyser et retravailler des pages de vente, emails et contenus marketing sur le marché français.",
-    "about.p2":"J'ai travaillé pour des clients dans des <strong>niches variées</strong> — du coaching business à l'e-commerce, en passant par le sport et la séduction.",
-    "about.p3":"Aujourd'hui, je mets mes compétences au service de ceux qui veulent <em>convertir plus et vendre mieux.</em>",
-    "about.tag":"France · 2025",
-    "port.label":"/ 02 — Portfolio","port.title":"Mes <em>chefs-<br>d'œuvre.</em>","port.right":"Clique pour\nvoir les projets",
+    "about.lead":"Je m'appelle <span>Aaron, j'ai 20 ans.</span><br><br> <span style='font-style:normal;font-size:14px;line-height:1.3;color:rgba(255,255,255,0.65);font-family:Archivo,sans-serif;font-weight:400;'>J'ai toujours été attiré par l'entrepreneuriat et très vite, j'ai compris que je ne me voyais pas suivre un parcours classique. <br> J'avais besoin d'autonomie, de liberté et d'un métier où mes résultats dépendent directement de mon travail...</span>",    "about.p1":"C'est ce qui m'a amené à me lancer dans le <strong>copywriting</strong> ! J'ai pu accumuler une solide expérience avec les <strong>ceennntaines d'heures</strong> passées à écrire, analyser et retravailler des pages de vente, emails et contenus marketing sur le marché français.",
+    "about.p2":"J'ai travaillé pour des clients dans des <strong>niches variées</strong> allant du coaching business à l'e-com, en passant par le sport et la séduction.",
+    "about.p3":"<span style='font-family:Instrument Serif,serif;font-style:italic;font-size:clamp(14px,1.0vw,24px);line-height:1.3;color:#fff;'>Aujourd'hui, je suis le bras droit des entrepreneurs qui veulent <span style='color:var(--blue)'>convertir plus</span> et <span style='color:var(--blue)'>vendre mieux.</span> <br></span>Et quand je ne suis pas derrière mon clavier, je suis sur un court en train de taper la balle <span style='color:var(--blue)'>à la Rafa 🎾</span></span>",    "port.label":"/ 02 — Portfolio","port.title":"Mes <em>chefs-<br>d'œuvre.</em>","port.right":"Clique pour\nvoir les projets",
     "ig.label":"/ 03 — Instagram","ig.title":"Sur <em>Instagram.</em>","ig.right":"@aaron.copywriting\nTémoignages · Cases",
     "ig.headline":"Témoignages,<br>cases & <em>coulisses.</em>","ig.handle":"@aaron.copywriting","ig.btn":"Suivre sur Instagram",
     "testi.label":"/ 04 — Témoignages","testi.title":"Ils en <em>parlent</em><br>mieux que moi.","testi.right":"Vidéos clients\nauthentiques",
@@ -1473,22 +1470,22 @@ const T = {
     "cta.label":"Ready when you are","cta.title":"On <em>parle</em> ?","cta.btn":"Réserver un appel",
     "footer":"© 2026 Aaron · Copywriter",
     "modal.empty":"Aucun projet disponible pour l'instant.","btn.voir":"Voir",
-  },
+    "cta.sub":"(sauf si tu veux continuer à laisser de l'argent sur la table 👀)",  },
   en: {
     "nav.home":"Home","nav.services":"Services","nav.testi":"Testimonials","nav.cta":"Book a call",
     "hero.badge":"Available · 2026","hero.meta":"Portfolio · 2026\nAaron · Copywriter",
-    "hero.title":"The copywriter<br>your <span class='blue'>business</span><br><span class='serif'>has been waiting for.</span>",
-    "hero.desc":"Agency, coach, e-com... Your offer is solid, your client results too.<br>But you know your <strong>Ads, Emails and funnel</strong> could perform better —<br>and you're probably leaving money on the table.",
+    "hero.title":"The copywriter<br>for <span class='blue'>six-figure</span><br><span class='serif'>businesses.</span>",
+    "hero.desc":"My name is <strong>Aaron</strong>, I help entrepreneurs who want to <strong><br>attract more clients</strong>, <strong>sell more easily,</strong> and become the <strong>reference in their market.</strong>",
     "hero.cta":"Book a call","hero.ghost":"See projects ↓",
     "stat.1.l":"Experience","stat.1.s":"Year of\ncopywriting",
     "stat.2.l":"Projects","stat.2.s":"Projects\ncompleted",
     "stat.3.l":"Output","stat.3.s":"Emails & Ads\nwritten",
     "stat.4.l":"Specialties","stat.4.s":"Full-stack\ncopywriter",
     "about.label":"/ 01 — About","about.title":"About <em>me.</em>","about.right":"Copywriter\nsince 2025",
-    "about.lead":"My name is <span>Aaron.</span> I've been writing copy for over a year now.",
-    "about.p1":"I've built solid experience through <strong>hundreds of hours</strong> spent writing, analysing and refining sales pages, emails and marketing content for the French market.",
+    "about.lead":"My name is <span>Aaron, I'm 20.</span><br><br> <span style='font-style:normal;font-size:14px;line-height:1.3;color:rgba(255,255,255,0.65);font-family:Archivo,sans-serif;font-weight:400;'>I've always been drawn to entrepreneurship and quickly realised a traditional path wasn't for me. <br> I needed autonomy, freedom and a job where my results depend directly on my work...</span>",
+    "about.p1":"That's what led me to <strong>copywriting</strong>! I've built solid experience through <strong>hundreds of hours</strong> spent writing, analysing and refining sales pages, emails and marketing content for the French market.",
     "about.p2":"I've worked with clients across <strong>various niches</strong> — from business coaching to e-commerce, fitness and seduction.",
-    "about.p3":"Today, I put my skills to work for those who want to <em>convert more and sell better.</em>",
+    "about.p3":"<span style='font-family:Instrument Serif,serif;font-style:italic;font-size:clamp(14px,1.0vw,24px);line-height:1.3;color:#fff;'>Today, I'm the secret weapon of entrepreneurs who want to <span style='color:var(--blue)'>convert more</span> and <span style='color:var(--blue)'>sell better.</span> <br></span>And when I'm not behind my keyboard, I'm on a court hitting balls <span style='color:var(--blue)'>like Rafa 🎾</span>",
     "about.tag":"France · 2025",
     "port.label":"/ 02 — Portfolio","port.title":"My <em>master-<br>pieces.</em>","port.right":"Click to\nsee projects",
     "ig.label":"/ 03 — Instagram","ig.title":"On <em>Instagram.</em>","ig.right":"@aaron.copywriting\nTestimonials · Cases",
@@ -1498,7 +1495,7 @@ const T = {
     "cta.label":"Ready when you are","cta.title":"Let's <em>talk?</em>","cta.btn":"Book a call",
     "footer":"© 2026 Aaron · Copywriter",
     "modal.empty":"No projects available yet.","btn.voir":"View",
-  }
+    "cta.sub":"(unless you want to keep leaving money on the table 👀)",  }
 };
 let lang = 'fr';
 function t(k){ return T[lang][k] || k; }
@@ -1562,6 +1559,7 @@ function setLang(l) {
   document.getElementById('cta-label').textContent = t('cta.label');
   document.getElementById('cta-title').innerHTML = t('cta.title');
   document.getElementById('cta-btn-text').textContent = t('cta.btn');
+  document.getElementById('cta-sub').textContent = t('cta.sub');
 
   // Footer
   document.getElementById('footer-copy').textContent = t('footer');
