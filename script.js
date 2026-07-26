@@ -13,7 +13,7 @@ const T = {
         "about.label": "/ 01 — À propos", "about.title": "À <em>propos</em><br>de moi.", "about.right": "Copywriter\ndepuis 2025",
         "about.lead": "Je m'appelle <span style='font-size:17px;'>Aaron.</span><br><br> <span style='font-style:normal;font-size:14px;line-height:1.3;color:rgba(255,255,255,255);font-family:Archivo,sans-serif;font-weight:400;'>J'ai toujours été attiré par l'entrepreneuriat et très vite, j’ai compris que je voulais construire quelque chose où mes résultats dépendraient uniquement de la qualité de mon travail.<br></span>", "about.p1": "C'est ce qui m'a amené vers le <strong>copywriting</strong>. J'ai pu accumuler une solide expérience avec les <strong>ceennntaines d'heures</strong> passées à écrire, analyser et retravailler des pages de vente, emails et contenus marketing sur le marché français.",
         "about.p2": "J'ai travaillé pour des clients dans des <strong>niches variées</strong> allant du coaching business à l'e-com, en passant par le sport <br> et la séduction.",
-        "about.p3": "<span style='font-family:Instrument Serif,serif;font-style:italic;font-size:clamp(17px,1.0vw,24px);line-height:1.3;color:#fff;'>Aujourd'hui, j’aide les entrepreneurs qui veulent <span style='color:var(--blue)'>attirer plus de clients,</span> et <span style='color:var(--blue)'>vendre mieux.</span> <br></span>Et quand je ne suis pas derrière mon clavier, je suis sur un court en train de taper la balle <span style='color:var(--blue)'>à la Rafa ! 🎾</span></span>", "port.label": "/ 02 — Portfolio", "port.title": "Mes <em>chefs-<br>d'œuvre.</em>", "port.right": "Clique pour\nvoir les projets",
+        "about.p3": "<span style='font-family:Instrument Serif,serif;font-style:italic;font-size:clamp(20px);line-height:1.3;color:#fff;'>Aujourd'hui, j’aide les entrepreneurs qui veulent <span style='color:var(--blue)'>attirer plus de clients,</span> et <span style='color:var(--blue)'>vendre mieux.</span> <br></span>Et quand je ne suis pas derrière mon clavier, je suis sur un court en train de taper la balle <span style='color:var(--blue)'>à la Rafa ! 🎾</span></span>", "port.label": "/ 02 — Portfolio", "port.title": "Mes <em>chefs-<br>d'œuvre.</em>", "port.right": "Clique pour\nvoir les projets",
         "about.tag": "France · 2025",
         "ig.label": "/ 03 — Instagram", "ig.title": "Sur <em>Instagram.</em>", "ig.right": "@aaron.copywriting\nTémoignages · Cases",
         "ig.headline": "Témoignages,<br>cases & <em>coulisses.</em>", "ig.handle": "@aaron.copywriting", "ig.btn": "Suivre sur Instagram",
@@ -294,6 +294,14 @@ function closeModal(e) { if (e.target === overlay) closeModalDirect(); }
 function closeModalDirect() { overlay.classList.remove('active'); document.body.style.overflow = ''; }
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModalDirect(); });
 
+/* ── VIDEO PLACEHOLDER HIDE ── */
+document.querySelectorAll('.video-card video').forEach((v, i) => {
+    const ph = document.getElementById('vp' + (i + 1));
+    const hide = () => { if (ph) ph.style.display = 'none'; };
+    // On cache seulement au play, pas au chargement (fix thumbnail mobile)
+    v.addEventListener('play', hide);
+});
+
 /* ── BURGER ── */
 function toggleMenu() { document.getElementById('navMobile').classList.toggle('open'); }
 
@@ -363,147 +371,202 @@ document.addEventListener("mousemove", (e) => {
 
 /* ── MENU ACTIF SELON LA SECTION ── */
 
+
 const sections = document.querySelectorAll("#top, #prestations, #temoignages");
 const navLinks = document.querySelectorAll(".nav-links a");
 
+
 const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) return;
+ (entries) => {
+   entries.forEach((entry) => {
+     if (!entry.isIntersecting) return;
 
-      const id = entry.target.id;
 
-      navLinks.forEach((link) => {
-        link.classList.toggle(
-          "active",
-          link.getAttribute("href") === "#" + id
-        );
-      });
-    });
-  },
-  {
-    threshold: 0.4,
-    rootMargin: "-80px 0px -40% 0px"
-  }
+     const id = entry.target.id;
+
+
+     navLinks.forEach((link) => {
+       link.classList.toggle(
+         "active",
+         link.getAttribute("href") === "#" + id
+       );
+     });
+   });
+ },
+ {
+   threshold: 0.4,
+   rootMargin: "-80px 0px -40% 0px"
+ }
 );
 
+
 sections.forEach((section) => {
-    observer.observe(section);
+   observer.observe(section);
 });
+
 
 const slides = [...document.querySelectorAll(".testimonial-slide")];
 const videos = [...document.querySelectorAll(".testimonial-video")];
 
+
 const prevBtn = document.getElementById("testimonial-prev");
 const nextBtn = document.getElementById("testimonial-next");
 
+
 let current = 0;
 
+
 function pauseAll() {
-    videos.forEach(video => {
-        video.pause();
-    });
+   videos.forEach(video => {
+       video.pause();
+   });
 }
+
 
 function updateCarousel() {
 
-    slides.forEach(slide => {
-        slide.classList.remove(
-            "is-active",
-            "is-prev",
-            "is-next",
-            "is-hidden"
-        );
-    });
 
-    const prev =
-        (current - 1 + slides.length) % slides.length;
+   slides.forEach(slide => {
+       slide.classList.remove(
+           "is-active",
+           "is-prev",
+           "is-next",
+           "is-hidden"
+       );
+   });
 
-    const next =
-        (current + 1) % slides.length;
 
-    slides[current].classList.add("is-active");
-    slides[prev].classList.add("is-prev");
-    slides[next].classList.add("is-next");
+   const prev =
+       (current - 1 + slides.length) % slides.length;
 
-    pauseAll();
+
+   const next =
+       (current + 1) % slides.length;
+
+
+   slides[current].classList.add("is-active");
+   slides[prev].classList.add("is-prev");
+   slides[next].classList.add("is-next");
+
+
+   pauseAll();
 }
+
 
 nextBtn.addEventListener("click", () => {
 
-    current++;
 
-    if (current >= slides.length)
-        current = 0;
+   current++;
 
-    updateCarousel();
+
+   if (current >= slides.length)
+       current = 0;
+
+
+   updateCarousel();
+
 
 });
+
 
 prevBtn.addEventListener("click", () => {
 
-    current--;
 
-    if (current < 0)
-        current = slides.length - 1;
+   current--;
 
-    updateCarousel();
+
+   if (current < 0)
+       current = slides.length - 1;
+
+
+   updateCarousel();
+
 
 });
+
+
 
 
 videos.forEach(video=>{
 
-    video.addEventListener("play",()=>{
 
-        videos.forEach(v=>{
+   video.addEventListener("play",()=>{
 
-            if(v!==video)
-                v.pause();
 
-        });
+       videos.forEach(v=>{
 
-    });
+
+           if(v!==video)
+               v.pause();
+
+
+       });
+
+
+   });
+
 
 });
+
 
 updateCarousel();
 
+
 slides.forEach((slide, index) => {
 
-    slide.addEventListener("click", (e) => {
 
-        // Si on clique sur la vidéo active, on ne fait rien
-        if (slide.classList.contains("is-active")) return;
+   slide.addEventListener("click", (e) => {
 
-        // Si on clique sur les contrôles de la vidéo, on ne change pas le carousel
-        if (e.target.closest("video")) return;
 
-        current = index;
-        updateCarousel();
+       // Si on clique sur la vidéo active, on ne fait rien
+       if (slide.classList.contains("is-active")) return;
 
-    });
+
+       // Si on clique sur les contrôles de la vidéo, on ne change pas le carousel
+       if (e.target.closest("video")) return;
+
+
+       current = index;
+       updateCarousel();
+
+
+   });
+
 
 });
+
 
 videos.forEach((video, index) => {
 
-    video.addEventListener("click", (e) => {
 
-        const slide = slides[index];
+   video.addEventListener("click", (e) => {
 
-        // Si la vidéo n'est pas active, on la ramène au centre
-        if (!slide.classList.contains("is-active")) {
 
-            e.preventDefault();
-            e.stopPropagation();
+       const slide = slides[index];
 
-            current = index;
-            updateCarousel();
 
-            return;
-        }
+       // Si la vidéo n'est pas active, on la ramène au centre
+       if (!slide.classList.contains("is-active")) {
 
-    });
+
+           e.preventDefault();
+           e.stopPropagation();
+
+
+           current = index;
+           updateCarousel();
+
+
+           return;
+       }
+
+
+   });
+
 
 });
+
+
+
+
+

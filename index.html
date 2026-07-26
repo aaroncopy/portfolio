@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Aaron — Copywriting</title>
-  <link rel="icon" type="image/x-icon" href="paper.png">
+  <link rel="icon" type="image/x-icon" href="image/paper.png">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
@@ -27,7 +27,6 @@
 
 <body>
 
-  <!-- NAV -->
   <nav id="navbar">
     <a href="#top" class="logo"><span class="logo-dot"></span>Aaron</a>
     <ul class="nav-links">
@@ -52,6 +51,9 @@
     </div>
   </nav>
 
+
+
+
   <div class="nav-mobile" id="navMobile">
     <a href="#top" onclick="toggleMenu()" id="nav-home-m">Accueil</a>
     <a href="#prestations" onclick="toggleMenu()" id="nav-services-m">Prestations</a>
@@ -60,7 +62,7 @@
       id="nav-cta-m">Réserver un appel</a>
   </div>
 
-  <main>
+  <main id="top">
     <div class="grid">
 
       <!-- ── HERO ── -->
@@ -90,6 +92,8 @@
                 id="hero-cta">
                 <span id="hero-cta-text">Réserver un appel</span>
                 <span class="call-icon">📞</span>
+
+
               </a>
               <a href="#prestations" class="btn-ghost" id="hero-ghost">Voir les projets ↓</a>
             </div>
@@ -97,16 +101,10 @@
           <div class="hero-photo-wrap">
             <div class="hero-photo" id="heroPhoto">
               <picture>
-                <source media="(max-width: 768px)" srcset="pppp.jpg">
+                <source media="(max-width: 768px)" srcset="image/pppp.jpg">
                 <img src="image/site.png" alt="Aaron">
               </picture>
             </div>
-        <div class="hero-photo-wrap">
-          <div class="hero-photo" id="heroPhoto">
-        <picture>
-           <source media="(max-width: 768px)" srcset="image/pppp.jpg">
-           <img src="image/site.png" alt="Aaron">
-         </picture>
           </div>
         </div>
       </div>
@@ -179,40 +177,54 @@
         </a>
       </div>
 
-<a href="https://www.instagram.com/aaron.vichard/" target="_blank" rel="noopener" class="phone-card reveal card-block" data-handle="@aaron.vichard" style="text-decoration:none; cursor:pointer;">      
+      <a href="https://www.instagram.com/aaron.vichard/" target="_blank" rel="noopener"
+        class="phone-card reveal card-block" data-handle="@aaron.vichard" style="text-decoration:none; cursor:pointer;">
         <div class="phone-mockup">
-        <div class="phone-notch"></div>
-        <div class="phone-screen">
-          <div class="phone-screen-placeholder">
-            <div class="ps-header">
-              <span>aaron.vichard</span>
-              <span style="font-family:'Archivo',sans-serif;font-size:13px;">☰</span>
-            </div>
-            <div class="ps-profile">
-              <div class="ps-avatar"><div class="ps-avatar-in"><img src="image/pd.png" style="width:99%;height:98%;object-fit:cover;border-radius:100%;"></div></div>
-              <div class="ps-stats">
-                <div class="ps-stat"><div class="ps-stat-n">18</div><div class="ps-stat-l">posts</div></div>
-                <div class="ps-stat"><div class="ps-stat-n">327</div><div class="ps-stat-l">abonnés</div></div>
-                <div class="ps-stat"><div class="ps-stat-n">105</div><div class="ps-stat-l">suivi(e)</div></div>
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+            <div class="phone-screen-placeholder">
+              <div class="ps-header">
+                <span>aaron.vichard</span>
+                <span style="font-family:'Archivo',sans-serif;font-size:13px;">☰</span>
               </div>
-            </div>
-            <div class="ps-bio">
-              <span class="ps-name">J'écris du copy stylé <br>pour des biz stylé</span>
-              Funnels, emails & content writing<br>
-              <span style="color:var(--blue-bright);font-size:9px;">→ aaron.copyy@gmail.com</span>
-            </div>
-            <div class="ps-btns">
-              <span>S'abonner</span>
-              <span class="sec">Message</span>
-              <span class="sec">Email</span>
-            </div>
-            <div class="ps-grid">
-              <div class="ps-cell b1"><span>+100<br>COPIES</span></div>
-              <div class="ps-cell b2">30+<br>PROJETS</div>
-              <div class="ps-cell b3">9<br>FORMATS</div>
-              <div class="ps-cell b4">VSL<br>101</div>
-              <div class="ps-cell b5">Hook<br>frame</div>
-              <div class="ps-cell b6">Retour<br>client</div>
+              <div class="ps-profile">
+                <div class="ps-avatar">
+                  <div class="ps-avatar-in"><img src="image/pd.png"
+                      style="width:99%;height:98%;object-fit:cover;border-radius:100%;"></div>
+                </div>
+                <div class="ps-stats">
+                  <div class="ps-stat">
+                    <div class="ps-stat-n">18</div>
+                    <div class="ps-stat-l">posts</div>
+                  </div>
+                  <div class="ps-stat">
+                    <div class="ps-stat-n">327</div>
+                    <div class="ps-stat-l">abonnés</div>
+                  </div>
+                  <div class="ps-stat">
+                    <div class="ps-stat-n">105</div>
+                    <div class="ps-stat-l">suivi(e)</div>
+                  </div>
+                </div>
+              </div>
+              <div class="ps-bio">
+                <span class="ps-name">J'écris du copy stylé <br>pour des biz stylé</span>
+                Funnels, emails & content writing<br>
+                <span style="color:var(--blue-bright);font-size:9px;">→ aaron.copyy@gmail.com</span>
+              </div>
+              <div class="ps-btns">
+                <span>S'abonner</span>
+                <span class="sec">Message</span>
+                <span class="sec">Email</span>
+              </div>
+              <div class="ps-grid">
+                <div class="ps-cell b1"><span>+100<br>COPIES</span></div>
+                <div class="ps-cell b2">30+<br>PROJETS</div>
+                <div class="ps-cell b3">9<br>FORMATS</div>
+                <div class="ps-cell b4">VSL<br>101</div>
+                <div class="ps-cell b5">Hook<br>frame</div>
+                <div class="ps-cell b6">Retour<br>client</div>
+              </div>
             </div>
           </div>
         </div>
@@ -228,64 +240,87 @@
             </h2>
           </div>
 
+
           <div class="section-right" id="testi-right">
             Vidéos clients<br>authentiques
           </div>
         </div>
       </div>
 
+
       <section class="testimonial-carousel reveal">
+
 
         <button class="carousel-arrow prev" id="testimonial-prev" aria-label="Précédent">
           ‹
-      </button>
+        </button>
+
 
         <div class="carousel-track" id="testimonial-track">
+
 
           <!-- Jessim -->
           <article class="testimonial-slide">
 
+
             <div class="video-tag" id="testi-tag-1">Témoignage</div>
+
 
             <video class="testimonial-video" controls preload="auto" playsinline webkit-playsinline>
 
+
               <source src="video/1.mp4" type="video/mp4">
 
+
             </video>
+
 
             <div class="video-info">
               <div class="video-name" id="testi-name-1">Jessim</div>
               <div class="video-role" id="testi-role-1">@jessimfitness_</div>
             </div>
 
+
           </article>
+
 
           <!-- Sol -->
           <article class="testimonial-slide">
 
+
             <div class="video-tag" id="testi-tag-2">Témoignage</div>
+
 
             <video class="testimonial-video" controls preload="auto" playsinline webkit-playsinline>
 
+
               <source src="video/2.mp4" type="video/mp4">
 
+
             </video>
+
 
             <div class="video-info">
               <div class="video-name" id="testi-name-2">Sol</div>
               <div class="video-role" id="testi-role-2">@sol.copywriting</div>
             </div>
 
+
           </article>
+
 
           <!-- Irina -->
           <article class="testimonial-slide">
 
+
             <div class="video-tag" id="testi-tag-3">Témoignage</div>
+
 
             <video class="testimonial-video" controls preload="auto" playsinline webkit-playsinline>
 
+
               <source src="video/3.mp4" type="video/mp4">
+
 
             </video>
             <div class="video-info">
@@ -293,15 +328,24 @@
               <div class="video-role" id="testi-role-3">@irisart24</div>
             </div>
 
+
           </article>
+
 
         </div>
 
+
         <button class="carousel-arrow next" id="testimonial-next" aria-label="Suivant">
           ›
-      </button>
+        </button>
+
 
       </section>
+
+
+
+
+
       <!-- ── FINAL CTA ── -->
       <div class="card-block final-cta reveal" id="contact">
         <div class="cta-bg-text">TALK</div>
