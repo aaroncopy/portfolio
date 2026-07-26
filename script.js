@@ -294,14 +294,6 @@ function closeModal(e) { if (e.target === overlay) closeModalDirect(); }
 function closeModalDirect() { overlay.classList.remove('active'); document.body.style.overflow = ''; }
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModalDirect(); });
 
-/* ── VIDEO PLACEHOLDER HIDE ── */
-document.querySelectorAll('.video-card video').forEach((v, i) => {
-    const ph = document.getElementById('vp' + (i + 1));
-    const hide = () => { if (ph) ph.style.display = 'none'; };
-    // On cache seulement au play, pas au chargement (fix thumbnail mobile)
-    v.addEventListener('play', hide);
-});
-
 /* ── BURGER ── */
 function toggleMenu() { document.getElementById('navMobile').classList.toggle('open'); }
 
@@ -368,54 +360,149 @@ document.addEventListener("mousemove", (e) => {
     hero.style.transform = `translate(${x}px,${y}px)`;
 
 });
-const videos = document.querySelectorAll(".video-card");
 
-let active = 1;
+/* ── MENU ACTIF SELON LA SECTION ── */
 
-function updateSlider() {
+const sections = document.querySelectorAll("#top, #prestations, #temoignages");
+const navLinks = document.querySelectorAll(".nav-links a");
 
-    videos.forEach(v => {
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
 
-        v.classList.remove("active", "side");
+      const id = entry.target.id;
+
+      navLinks.forEach((link) => {
+        link.classList.toggle(
+          "active",
+          link.getAttribute("href") === "#" + id
+        );
+      });
+    });
+  },
+  {
+    threshold: 0.4,
+    rootMargin: "-80px 0px -40% 0px"
+  }
+);
+
+sections.forEach((section) => {
+    observer.observe(section);
+});
+
+const slides = [...document.querySelectorAll(".testimonial-slide")];
+const videos = [...document.querySelectorAll(".testimonial-video")];
+
+const prevBtn = document.getElementById("testimonial-prev");
+const nextBtn = document.getElementById("testimonial-next");
+
+let current = 0;
+
+function pauseAll() {
+    videos.forEach(video => {
+        video.pause();
+    });
+}
+
+function updateCarousel() {
+
+    slides.forEach(slide => {
+        slide.classList.remove(
+            "is-active",
+            "is-prev",
+            "is-next",
+            "is-hidden"
+        );
+    });
+
+    const prev =
+        (current - 1 + slides.length) % slides.length;
+
+    const next =
+        (current + 1) % slides.length;
+
+    slides[current].classList.add("is-active");
+    slides[prev].classList.add("is-prev");
+    slides[next].classList.add("is-next");
+
+    pauseAll();
+}
+
+nextBtn.addEventListener("click", () => {
+
+    current++;
+
+    if (current >= slides.length)
+        current = 0;
+
+    updateCarousel();
+
+});
+
+prevBtn.addEventListener("click", () => {
+
+    current--;
+
+    if (current < 0)
+        current = slides.length - 1;
+
+    updateCarousel();
+
+});
+
+
+videos.forEach(video=>{
+
+    video.addEventListener("play",()=>{
+
+        videos.forEach(v=>{
+
+            if(v!==video)
+                v.pause();
+
+        });
 
     });
 
-    videos[active].classList.add("active");
+});
 
-    videos[(active + 1) % videos.length].classList.add("side");
+updateCarousel();
 
-    videos[(active - 1 + videos.length) % videos.length].classList.add("side");
+slides.forEach((slide, index) => {
 
-}
+    slide.addEventListener("click", (e) => {
 
-updateSlider();
+        // Si on clique sur la vidéo active, on ne fait rien
+        if (slide.classList.contains("is-active")) return;
 
-videos.forEach((v, i) => {
+        // Si on clique sur les contrôles de la vidéo, on ne change pas le carousel
+        if (e.target.closest("video")) return;
 
-    v.onclick = () => {
+        current = index;
+        updateCarousel();
 
-        active = i;
+    });
 
-        updateSlider();
+});
 
-    }
-})
+videos.forEach((video, index) => {
 
-videos.forEach(card => {
+    video.addEventListener("click", (e) => {
 
-    card.addEventListener("click", () => {
+        const slide = slides[index];
 
-        document.querySelectorAll("video").forEach(v => {
+        // Si la vidéo n'est pas active, on la ramène au centre
+        if (!slide.classList.contains("is-active")) {
 
-            if (v !== card.querySelector("video")) {
+            e.preventDefault();
+            e.stopPropagation();
 
-                v.pause();
+            current = index;
+            updateCarousel();
 
-                v.currentTime = 0;
-
-            }
-
-        });
+            return;
+        }
 
     });
 
