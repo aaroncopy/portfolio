@@ -1,299 +1,361 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aaron — Copywriting</title>
-<link rel="icon" type="image/x-icon" href="paper.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aaron — Copywriting</title>
+  <link rel="icon" type="image/x-icon" href="paper.png">
 
-<!-- Open Graph -->
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://aaron-copy.fr/">
-<meta property="og:title" content="Portfolio - Aaron">
-<meta property="og:image" content="https://aaron-copy.fr/paper.png">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:url" content="https://aaron-copy.fr/">
-<meta name="twitter:title" content="Portfolio - Aaron">
-<meta name="twitter:image" content="https://aaron-copy.fr/paper.png">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aaron-copy.fr/">
+  <meta property="og:title" content="Portfolio - Aaron">
+  <meta property="og:image" content="https://aaron-copy.fr/paper.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://aaron-copy.fr/">
+  <meta name="twitter:title" content="Portfolio - Aaron">
+  <meta name="twitter:image" content="https://aaron-copy.fr/paper.png">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;1,9..40,300&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;1,9..40,300&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<!-- NAV -->
-<nav id="navbar">
-  <a href="#top" class="logo"><span class="logo-dot"></span>Aaron</a>
-  <ul class="nav-links">
-    <li><a href="#top" id="nav-home">Accueil</a></li>
-    <li><a href="#prestations" id="nav-services">Prestations</a></li>
-    <li><a href="#temoignages" id="nav-testi">Témoignages</a></li>
-  </ul>
-  <div class="nav-right">
-    <div class="lang-switch">
-      <button class="lang-btn active" id="btnFR" onclick="setLang('fr')">
-        <img src="https://flagcdn.com/w40/fr.png" width="20" height="14" alt="FR">
-      </button>
-      <button class="lang-btn" id="btnEN" onclick="setLang('en')">
-        <img src="https://flagcdn.com/w40/gb.png" width="20" height="14" alt="EN">
+  <!-- NAV -->
+  <nav id="navbar">
+    <a href="#top" class="logo"><span class="logo-dot"></span>Aaron</a>
+    <ul class="nav-links">
+      <li><a href="#top" id="nav-home">Accueil</a></li>
+      <li><a href="#prestations" id="nav-services">Prestations</a></li>
+      <li><a href="#temoignages" id="nav-testi">Témoignages</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="lang-switch">
+        <button class="lang-btn active" id="btnFR" onclick="setLang('fr')">
+          <img src="https://flagcdn.com/w40/fr.png" width="20" height="14" alt="FR">
+        </button>
+        <button class="lang-btn" id="btnEN" onclick="setLang('en')">
+          <img src="https://flagcdn.com/w40/gb.png" width="20" height="14" alt="EN">
+        </button>
+      </div>
+      <a href="https://calendly.com/aaron-copyy/rdv-copywriting" target="_blank" class="nav-cta" id="nav-cta">Réserver
+        un appel</a>
+      <button class="burger" id="burger" onclick="toggleMenu()" aria-label="Menu">
+        <span></span><span></span><span></span>
       </button>
     </div>
-    <a href="https://calendly.com/aaron-copyy/rdv-copywriting" target="_blank" class="nav-cta" id="nav-cta">Réserver un appel</a>
-    <button class="burger" id="burger" onclick="toggleMenu()" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
+  </nav>
+
+  <div class="nav-mobile" id="navMobile">
+    <a href="#top" onclick="toggleMenu()" id="nav-home-m">Accueil</a>
+    <a href="#prestations" onclick="toggleMenu()" id="nav-services-m">Prestations</a>
+    <a href="#temoignages" onclick="toggleMenu()" id="nav-testi-m">Témoignages</a>
+    <a href="https://calendly.com/aaron-copyy/rdv-copywriting" target="_blank" onclick="toggleMenu()"
+      id="nav-cta-m">Réserver un appel</a>
   </div>
-</nav>
 
-<div class="nav-mobile" id="navMobile">
-  <a href="#top" onclick="toggleMenu()" id="nav-home-m">Accueil</a>
-  <a href="#prestations" onclick="toggleMenu()" id="nav-services-m">Prestations</a>
-  <a href="#temoignages" onclick="toggleMenu()" id="nav-testi-m">Témoignages</a>
-  <a href="https://calendly.com/aaron-copyy/rdv-copywriting" target="_blank" onclick="toggleMenu()" id="nav-cta-m">Réserver un appel</a>
-</div>
+  <main>
+    <div class="grid">
 
-<main id="top">
-  <div class="grid">
-
-    <!-- ── HERO ── -->
-    <div class="card-block hero-card">
-      <div class="hero-bg-text">PORTFOLIO</div>
-      <div class="hero-top-bar">
-        <div class="hero-badge">
-          <span class="dot"></span>
-          <span id="hero-badge-text">Disponible · 2026</span>
-        </div>
-        <div class="hero-meta" id="hero-meta">Portfolio · 2026<br>Aaron · Copywriter</div>
-      </div>
-      <div class="hero-body">
-        <div class="hero-left">
-          <h1 class="hero-title" id="hero-title">
-            Le copywriter<br>
-            des <span class="blue">business</span><br>
-            <span class="serif" id="hero-serif">à 6 chiffres.</span>
-          </h1>
-          <p class="hero-sub" id="hero-desc">
-            Agence, coach, e-com... Ton offre est solide, tes résultats clients aussi.<br>
-            Mais tu sais que tes <strong>Ads, Emails et ton tunnel</strong> pourraient mieux performer —<br>
-            et tu laisses sûrement de l'argent sur la table.
-          </p>
-          <div class="hero-cta-wrap">
-            <a href="https://calendly.com/aaron-copyy/rdv-copywriting" target="_blank" class="btn-primary" id="hero-cta">
-              <span id="hero-cta-text">Réserver un appel</span>
-              <span class="arrow-c">→</span>
-            </a>
-            <a href="#prestations" class="btn-ghost" id="hero-ghost">Voir les projets ↓</a>
+      <!-- ── HERO ── -->
+      <div class="card-block hero-card" id="top">
+        <div class="hero-bg-text">PORTFOLIO</div>
+        <div class="hero-top-bar">
+          <div class="hero-badge">
+            <span class="dot"></span>
+            <span id="hero-badge-text">Disponible · 2026</span>
           </div>
+          <div class="hero-meta" id="hero-meta">Portfolio · 2026<br>Aaron · Copywriter</div>
         </div>
-        <div class="hero-photo-wrap">
-          <div class="hero-photo" id="heroPhoto">
-        <picture>
-           <source media="(max-width: 768px)" srcset="pppp.jpg">
-           <img src="image/site.png" alt="Aaron">
-         </picture>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ── STATS ── -->
-
-
-    <!-- ── ABOUT ── -->
-    <div class="section-intro reveal">
-      <div class="section-intro-inner">
-        <div>
-          <div class="section-label" id="about-label">/ 01 — À propos</div>
-          <h2 class="section-title" id="about-title">À <em>propos</em><br>de moi.</h2>
-        </div>
-        <div class="section-right" id="about-right">Copywriter<br>depuis 2025</div>
-      </div>
-    </div>
-
-    <div class="card-block about-text-card reveal">
-      <p class="about-lead" id="about-lead">Je m'appelle <span>Aaron.</span> Et cela fait plus d'un an que j'ai commencé le copywriting.</p>
-      <p id="about-p1">J'ai pu accumuler une solide expérience avec les <strong>ceennntaines d'heures</strong> passées à écrire, analyser et retravailler des pages de vente, emails et contenus marketing sur le marché français.</p>
-      <p id="about-p2">J'ai travaillé pour des clients dans des <strong>niches variées</strong> — du coaching business à l'e-commerce, en passant par le sport et la séduction.</p>
-      <p id="about-p3">Aujourd'hui, je mets mes compétences au service de ceux qui veulent <em>convertir plus et vendre mieux.</em></p>
-    </div>
-
-    <div class="card-block about-photo-card reveal">
-      <img src="image/pp.jpg" alt="Aaron">
-      <div class="about-tag" id="about-tag">France · 2025</div>
-      <div class="about-signature">
-        <div class="about-sig-name">Aaron.</div>
-        <div class="about-sig-meta">Est. 2025<br>Copywriter</div>
-      </div>
-    </div>
-
-    <!-- ── PORTFOLIO ── -->
-    <div class="section-intro reveal" id="prestations">
-      <div class="section-intro-inner">
-        <div>
-          <div class="section-label" id="port-section-label">/ 02 — Portfolio</div>
-          <h2 class="section-title" id="port-section-title">Mes <em>chefs-<br>d'œuvre.</em></h2>
-        </div>
-        <div class="section-right" id="port-section-right">Clique pour<br>voir les projets</div>
-      </div>
-    </div>
-
-    <div class="services-card reveal" id="cardsGrid"></div>
-
-    <!-- ── INSTAGRAM ── -->
-    <div class="section-intro reveal">
-      <div class="section-intro-inner">
-        <div>
-          <div class="section-label" id="ig-label">/ 03 — Instagram</div>
-          <h2 class="section-title" id="ig-title">Sur <em>Instagram.</em></h2>
-        </div>
-        <div class="section-right" id="ig-right">@aaron.copywriting<br>Témoignages · Cases</div>
-      </div>
-    </div>
-
-    <div class="card-block ig-text-card reveal">
-      <h3 class="ig-headline" id="ig-headline">Témoignages,<br>cases & <em>coulisses.</em></h3>
-      <div class="ig-handle" id="ig-handle">@aaron.copywriting</div>
-      <a href="https://www.instagram.com/aaron.copywriting" target="_blank" class="ig-btn" id="ig-btn">
-        <span id="ig-btn-text">Suivre sur Instagram</span>
-        <span class="arrow-c">↗</span>
-      </a>
-    </div>
-
-<a href="https://www.instagram.com/aaron.copywriting/" target="_blank" rel="noopener" class="phone-card reveal card-block" data-handle="@aaron.copywriting" style="text-decoration:none; cursor:pointer;">      
-        <div class="phone-mockup">
-        <div class="phone-notch"></div>
-        <div class="phone-screen">
-          <div class="phone-screen-placeholder">
-            <div class="ps-header">
-              <span>aaron.copywriting</span>
-              <span style="font-family:'Archivo',sans-serif;font-size:13px;">☰</span>
+        <div class="hero-body">
+          <div class="hero-left">
+            <h1 class="hero-title" id="hero-title">
+              Le copywriter<br>
+              des <span class="blue">business</span><br>
+              <span class="serif" id="hero-serif">à 6 chiffres.</span>
+            </h1>
+            <p class="hero-sub" id="hero-desc">
+              Agence, coach, e-com... Ton offre est solide, tes résultats clients aussi.<br>
+              Mais tu sais que tes <strong>Ads, Emails et ton tunnel</strong> pourraient mieux performer —<br>
+              et tu laisses sûrement de l'argent sur la table.
+            </p>
+            <div class="hero-cta-wrap">
+              <a href="https://calendly.com/aaron-copyy/rdv-copywriting" target="_blank" class="btn-primary"
+                id="hero-cta">
+                <span id="hero-cta-text">Réserver un appel</span>
+                <span class="call-icon">📞</span>
+              </a>
+              <a href="#prestations" class="btn-ghost" id="hero-ghost">Voir les projets ↓</a>
             </div>
-            <div class="ps-profile">
-              <div class="ps-avatar"><div class="ps-avatar-in"><img src="image/ppp.jpg" style="width:110%;height:110%;object-fit:cover;border-radius:60%;"></div></div>
-              <div class="ps-stats">
-                <div class="ps-stat"><div class="ps-stat-n">10</div><div class="ps-stat-l">posts</div></div>
-                <div class="ps-stat"><div class="ps-stat-n">464</div><div class="ps-stat-l">abonnés</div></div>
-                <div class="ps-stat"><div class="ps-stat-n">112</div><div class="ps-stat-l">suivi(e)</div></div>
+          </div>
+          <div class="hero-photo-wrap">
+            <div class="hero-photo" id="heroPhoto">
+              <picture>
+                <source media="(max-width: 768px)" srcset="pppp.jpg">
+                <img src="image/site.png" alt="Aaron">
+              </picture>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── STATS ── -->
+
+
+      <!-- ── ABOUT ── -->
+      <div class="section-intro reveal">
+        <div class="section-intro-inner">
+          <div>
+            <div class="section-label" id="about-label">/ 01 — À propos</div>
+            <h2 class="section-title" id="about-title">À <em>propos</em><br>de moi.</h2>
+          </div>
+          <div class="section-right" id="about-right">Copywriter<br>depuis 2025</div>
+        </div>
+      </div>
+
+      <div class="card-block about-text-card reveal">
+        <p class="about-lead" id="about-lead">Je m'appelle <span>Aaron.</span> Et cela fait plus d'un an que j'ai
+          commencé le copywriting.</p>
+        <p id="about-p1">J'ai pu accumuler une solide expérience avec les <strong>ceennntaines d'heures</strong> passées
+          à écrire, analyser et retravailler des pages de vente, emails et contenus marketing sur le marché français.
+        </p>
+        <p id="about-p2">J'ai travaillé pour des clients dans des <strong>niches variées</strong> — du coaching business
+          à l'e-commerce, en passant par le sport et la séduction.</p>
+        <p id="about-p3">Aujourd'hui, je mets mes compétences au service de ceux qui veulent <em>convertir plus et
+            vendre mieux.</em></p>
+      </div>
+
+      <div class="card-block about-photo-card reveal">
+        <img src="image/pp.jpg" alt="Aaron">
+        <div class="about-tag" id="about-tag">France · 2025</div>
+        <div class="about-signature">
+          <div class="about-sig-name">Aaron.</div>
+          <div class="about-sig-meta">Est. 2025<br>Copywriter</div>
+        </div>
+      </div>
+
+      <!-- ── PORTFOLIO ── -->
+      <div class="section-intro reveal" id="prestations">
+        <div class="section-intro-inner">
+          <div>
+            <div class="section-label" id="port-section-label">/ 02 — Portfolio</div>
+            <h2 class="section-title" id="port-section-title">Mes <em>chefs-<br>d'œuvre.</em></h2>
+          </div>
+          <div class="section-right" id="port-section-right">Clique pour<br>voir les projets</div>
+        </div>
+      </div>
+
+      <div class="services-card reveal" id="cardsGrid"></div>
+
+      <!-- ── INSTAGRAM ── -->
+      <div class="section-intro reveal">
+        <div class="section-intro-inner">
+          <div>
+            <div class="section-label" id="ig-label">/ 03 — Instagram</div>
+            <h2 class="section-title" id="ig-title">Sur <em>Instagram.</em></h2>
+          </div>
+          <div class="section-right" id="ig-right">@aaron.copywriting<br>Témoignages · Cases</div>
+        </div>
+      </div>
+
+      <div class="card-block ig-text-card reveal">
+        <h3 class="ig-headline" id="ig-headline">Témoignages,<br>cases & <em>coulisses.</em></h3>
+        <div class="ig-handle" id="ig-handle">@aaron.copywriting</div>
+        <a href="https://www.instagram.com/aaron.copywriting" target="_blank" class="ig-btn" id="ig-btn">
+          <span id="ig-btn-text">Suivre sur Instagram</span>
+          <span class="arrow-c">↗</span>
+        </a>
+      </div>
+
+      <a href="https://www.instagram.com/aaron.copywriting/" target="_blank" rel="noopener"
+        class="phone-card reveal card-block" data-handle="@aaron.copywriting"
+        style="text-decoration:none; cursor:pointer;">
+        <div class="phone-mockup">
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+            <div class="phone-screen-placeholder">
+              <div class="ps-header">
+                <span>aaron.copywriting</span>
+                <span style="font-family:'Archivo',sans-serif;font-size:13px;">☰</span>
+              </div>
+              <div class="ps-profile">
+                <div class="ps-avatar">
+                  <div class="ps-avatar-in"><img src="image/ppp.jpg"
+                      style="width:110%;height:110%;object-fit:cover;border-radius:60%;"></div>
+                </div>
+                <div class="ps-stats">
+                  <div class="ps-stat">
+                    <div class="ps-stat-n">10</div>
+                    <div class="ps-stat-l">posts</div>
+                  </div>
+                  <div class="ps-stat">
+                    <div class="ps-stat-n">464</div>
+                    <div class="ps-stat-l">abonnés</div>
+                  </div>
+                  <div class="ps-stat">
+                    <div class="ps-stat-n">112</div>
+                    <div class="ps-stat-l">suivi(e)</div>
+                  </div>
+                </div>
+              </div>
+              <div class="ps-bio">
+                <span class="ps-name">J'écris du copy stylé pour des biz stylé</span>
+                Funnels, emails & content writing<br>
+                <span style="color:var(--blue-bright);font-size:9px;">→ aaron.copyy@gmail.com</span>
+              </div>
+              <div class="ps-btns">
+                <span>S'abonner</span>
+                <span class="sec">Message</span>
+                <span class="sec">Email</span>
+              </div>
+              <div class="ps-grid">
+                <div class="ps-cell b1"><span>+100<br>COPIES</span></div>
+                <div class="ps-cell b2">30+<br>PROJETS</div>
+                <div class="ps-cell b3">9<br>FORMATS</div>
+                <div class="ps-cell b4">VSL<br>101</div>
+                <div class="ps-cell b5">Hook<br>frame</div>
+                <div class="ps-cell b6">Retour<br>client</div>
               </div>
             </div>
-            <div class="ps-bio">
-              <span class="ps-name">J'écris du copy stylé pour des biz stylé</span>
-              Funnels, emails & content writing<br>
-              <span style="color:var(--blue-bright);font-size:9px;">→ aaron.copyy@gmail.com</span>
-            </div>
-            <div class="ps-btns">
-              <span>S'abonner</span>
-              <span class="sec">Message</span>
-              <span class="sec">Email</span>
-            </div>
-            <div class="ps-grid">
-              <div class="ps-cell b1"><span>+100<br>COPIES</span></div>
-              <div class="ps-cell b2">30+<br>PROJETS</div>
-              <div class="ps-cell b3">9<br>FORMATS</div>
-              <div class="ps-cell b4">VSL<br>101</div>
-              <div class="ps-cell b5">Hook<br>frame</div>
-              <div class="ps-cell b6">Retour<br>client</div>
-            </div>
           </div>
         </div>
-      </div>
-    </a>
-
-    <!-- ── TESTIMONIALS ── -->
-    <div class="section-intro reveal" id="temoignages">
-      <div class="section-intro-inner">
-        <div>
-          <div class="section-label" id="testi-label">/ 04 — Témoignages</div>
-          <h2 class="section-title" id="testi-title">Ils en <em>parlent</em><br>mieux que moi.</h2>
-        </div>
-        <div class="section-right" id="testi-right">Vidéos clients<br>authentiques</div>
-      </div>
-    </div>
-
-    <div class="video-grid-wrap reveal">
-      <div class="video-grid">
-        <div class="video-card">
-          <div class="video-tag" id="testi-tag-1">Témoignage</div>
-          <video controls preload="metadata" playsinline webkit-playsinline>
-            <source src="video/1.mp4" type="video/mp4">
-          </video>
-          <div class="video-placeholder" id="vp1">
-            <div class="play-btn"></div>
-          </div>
-          <div class="video-info">
-            <div class="video-name" id="testi-name-1">Jessim</div>
-            <div class="video-role" id="testi-role-1">@jessimfitness_</div>
-          </div>
-        </div>
-        <div class="video-card">
-          <div class="video-tag" id="testi-tag-2">Témoignage</div>
-          <video controls preload="metadata" playsinline webkit-playsinline>
-            <source src="video/2.mp4" type="video/mp4">
-          </video>
-          <div class="video-placeholder" id="vp2">
-            <div class="play-btn"></div>
-          </div>
-          <div class="video-info">
-            <div class="video-name" id="testi-name-2">Sol</div>
-            <div class="video-role" id="testi-role-2">@sol.copywriting</div>
-          </div>
-        </div>
-        <div class="video-card">
-          <div class="video-tag" id="testi-tag-3">Témoignage</div>
-          <video controls preload="metadata" playsinline webkit-playsinline>
-            <source src="video/3.mp4" type="video/mp4">
-          </video>
-          <div class="video-placeholder" id="vp3">
-            <div class="play-btn"></div>
-          </div>
-          <div class="video-info">
-            <div class="video-name" id="testi-name-3">Irina</div>
-            <div class="video-role" id="testi-role-3">@irisart24</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ── FINAL CTA ── -->
-    <div class="card-block final-cta reveal" id="contact">
-      <div class="cta-bg-text">TALK</div>
-      <div class="cta-label" id="cta-label">Ready when you are</div>
-      <h2 class="cta-title" id="cta-title">On <em>parle</em> ?</h2>
-      <a href="https://calendly.com/aaron-copyy/rdv-copywriting" target="_blank" class="btn-primary cta-btn" style="position:relative;z-index:2;" id="cta-btn">
-        <span id="cta-btn-text">Réserver un appel</span>
-        <span class="arrow-c">→</span>
       </a>
-      <p id="cta-sub" style="position:relative;z-index:2;font-family:'Archivo',sans-serif;font-size:14px;color:rgba(255,255,255,0.5);margin-top:16px;">(sauf si tu veux continuer à laisser de l'argent sur la table 👀)</p>      <div class="cta-email">
-        ou directement : <a href="mailto:aaron.copyy@gmail.com">aaron.copyy@gmail.com</a>
+
+      <!-- ── TESTIMONIALS ── -->
+      <div class="section-intro reveal" id="temoignages">
+        <div class="section-intro-inner">
+          <div>
+            <div class="section-label" id="testi-label">/ 04 — Témoignages</div>
+            <h2 class="section-title" id="testi-title">
+              Ils en <em>parlent</em><br>mieux que moi.
+            </h2>
+          </div>
+
+          <div class="section-right" id="testi-right">
+            Vidéos clients<br>authentiques
+          </div>
+        </div>
       </div>
-    </div>
 
-  </div><!-- /grid -->
-</main>
+      <section class="testimonial-carousel reveal">
 
-<footer>
-  <div id="footer-copy">© 2026 Aaron · Copywriter</div>
-  <div class="footer-right">
-    <a href="mailto:aaron.copyy@gmail.com">aaron.copyy@gmail.com</a>
-    <a href="https://www.instagram.com/aaron.copywriting" target="_blank">@aaron.copywriting</a>
-  </div>
-</footer>
+        <button class="carousel-arrow prev" id="testimonial-prev" aria-label="Précédent">
+          ‹
+      </button>
 
-<!-- MODAL -->
-<div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
-  <div class="modal">
-    <div class="modal-header">
-      <div class="modal-title-wrap">
-        <span class="modal-icon" id="modalIcon"></span>
-        <h2 class="modal-title" id="modalTitle"></h2>
+        <div class="carousel-track" id="testimonial-track">
+
+          <!-- Jessim -->
+          <article class="testimonial-slide">
+
+            <div class="video-tag" id="testi-tag-1">Témoignage</div>
+
+            <video class="testimonial-video" controls preload="auto" playsinline webkit-playsinline>
+
+              <source src="video/1.mp4" type="video/mp4">
+
+            </video>
+
+            <div class="video-info">
+              <div class="video-name" id="testi-name-1">Jessim</div>
+              <div class="video-role" id="testi-role-1">@jessimfitness_</div>
+            </div>
+
+          </article>
+
+          <!-- Sol -->
+          <article class="testimonial-slide">
+
+            <div class="video-tag" id="testi-tag-2">Témoignage</div>
+
+            <video class="testimonial-video" controls preload="auto" playsinline webkit-playsinline>
+
+              <source src="video/2.mp4" type="video/mp4">
+
+            </video>
+
+            <div class="video-info">
+              <div class="video-name" id="testi-name-2">Sol</div>
+              <div class="video-role" id="testi-role-2">@sol.copywriting</div>
+            </div>
+
+          </article>
+
+          <!-- Irina -->
+          <article class="testimonial-slide">
+
+            <div class="video-tag" id="testi-tag-3">Témoignage</div>
+
+            <video class="testimonial-video" controls preload="auto" playsinline webkit-playsinline>
+
+              <source src="video/3.mp4" type="video/mp4">
+
+            </video>
+            <div class="video-info">
+              <div class="video-name" id="testi-name-3">Irina</div>
+              <div class="video-role" id="testi-role-3">@irisart24</div>
+            </div>
+
+          </article>
+
+        </div>
+
+        <button class="carousel-arrow next" id="testimonial-next" aria-label="Suivant">
+          ›
+      </button>
+
+      </section>
+      <!-- ── FINAL CTA ── -->
+      <div class="card-block final-cta reveal" id="contact">
+        <div class="cta-bg-text">TALK</div>
+        <div class="cta-label" id="cta-label">Ready when you are</div>
+        <h2 class="cta-title" id="cta-title">On <em>parle</em> ?</h2>
+        <a href="https://calendly.com/aaron-copyy/rdv-copywriting" target="_blank" class="btn-primary cta-btn"
+          style="position:relative;z-index:2;" id="cta-btn">
+          <span id="cta-btn-text">Réserver un appel</span>
+          <span class="call-icon">📞</span>
+
+
+        </a>
+        <p id="cta-sub"
+          style="position:relative;z-index:2;font-family:'Archivo',sans-serif;font-size:14px;color:rgba(255,255,255,0.5);margin-top:16px;">
+          (sauf si tu veux continuer à laisser de l'argent sur la table 👀)</p>
+        <div class="cta-email">
+          ou directement : <a href="mailto:aaron.copyy@gmail.com">aaron.copyy@gmail.com</a>
+        </div>
       </div>
-      <button class="modal-close" onclick="closeModalDirect()">✕</button>
+
+    </div><!-- /grid -->
+  </main>
+
+  <footer>
+    <div id="footer-copy">© 2026 Aaron · Copywriter</div>
+    <div class="footer-right">
+      <a href="mailto:aaron.copyy@gmail.com">aaron.copyy@gmail.com</a>
+      <a href="https://www.instagram.com/aaron.copywriting" target="_blank">@aaron.copywriting</a>
     </div>
-    <div class="project-list" id="projectList"></div>
+  </footer>
+
+  <!-- MODAL -->
+  <div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
+    <div class="modal">
+      <div class="modal-header">
+        <div class="modal-title-wrap">
+          <span class="modal-icon" id="modalIcon"></span>
+          <h2 class="modal-title" id="modalTitle"></h2>
+        </div>
+        <button class="modal-close" onclick="closeModalDirect()">✕</button>
+      </div>
+      <div class="project-list" id="projectList"></div>
+    </div>
   </div>
-</div>
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
+
 </html>
