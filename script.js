@@ -4,16 +4,17 @@ const T = {
         "nav.home": "Accueil", "nav.services": "Prestations", "nav.testi": "Témoignages", "nav.cta": "Réserver un appel",
         "hero.badge": "Disponible · 2026", "hero.meta": "Portfolio · 2026\nAaron · Copywriter",
         "hero.title": "Le copywriter<br>des <span class='blue'>business</span><br><span class='serif'>à 6 chiffres.</span>",
-        "hero.desc": "Je m'appelle <strong>Aaron</strong>, j’aide les entrepreneurs qui veulent<strong> <br>attirer plus de clients</strong>,<strong>vendre plus facilement,</strong> et devenir la <strong> référence de leur marché.</strong>",
+        "hero.desc": "Je m'appelle <strong>Aaron</strong>, Le bras droit des entrepreneurs à <strong>6 chiffres</strong> <br>qui veulent <strong>convertir plus,</strong> <strong>vendre mieux</strong> et parler plus fort à la <strong>bonne audience</strong>",
         "hero.cta": "Réserver un appel", "hero.ghost": "Voir les projets ↓",
         "stat.1.l": "Expérience", "stat.1.s": "An de\ncopywriting",
         "stat.2.l": "Projets", "stat.2.s": "Projets\nréalisés",
         "stat.3.l": "Production", "stat.3.s": "Emails & Ads\nrédigés",
         "stat.4.l": "Formats", "stat.4.s": "Full-stack\ncopywriter",
         "about.label": "/ 01 — À propos", "about.title": "À <em>propos</em><br>de moi.", "about.right": "Copywriter\ndepuis 2025",
-        "about.lead": "Je m'appelle <span style='font-size:17px;'>Aaron, j'ai 20 ans.</span><br><br> <span style='font-style:normal;font-size:14px;line-height:1.3;color:rgba(255,255,255,255);font-family:Archivo,sans-serif;font-weight:400;'>J'ai toujours été attiré par l'entrepreneuriat et très vite, j'ai compris que je ne me voyais pas suivre un parcours classique. <br> J'avais besoin d'autonomie, de liberté et d'un métier où mes résultats dépendent directement de mon travail... pas de l'humeur d'un patron avant son premier café.</span>", "about.p1": "C'est ce qui m'a amené à me lancer dans le <strong>copywriting</strong>. J'ai pu accumuler une solide expérience avec les <strong>ceennntaines d'heures</strong> passées à écrire, analyser et retravailler des pages de vente, emails et contenus marketing sur le marché français.",
-        "about.p2": "J'ai travaillé pour des clients dans des <strong>niches variées</strong> allant du coaching business à l'e-com, en passant par le sport et la séduction.",
-        "about.p3": "<span style='font-family:Instrument Serif,serif;font-style:italic;font-size:clamp(17px,1.0vw,24px);line-height:1.3;color:#fff;'>Aujourd'hui, je suis le bras droit des entrepreneurs qui veulent <span style='color:var(--blue)'>convertir plus</span> et <span style='color:var(--blue)'>vendre mieux.</span> <br></span>Et quand je ne suis pas derrière mon clavier, je suis sur un court en train de taper la balle <span style='color:var(--blue)'>à la Rafa ! 🎾</span></span>", "port.label": "/ 02 — Portfolio", "port.title": "Mes <em>chefs-<br>d'œuvre.</em>", "port.right": "Clique pour\nvoir les projets",
+        "about.lead": "Je m'appelle <span style='font-size:17px;'>Aaron.</span><br><br> <span style='font-style:normal;font-size:14px;line-height:1.3;color:rgba(255,255,255,255);font-family:Archivo,sans-serif;font-weight:400;'>J'ai toujours été attiré par l'entrepreneuriat et très vite, j’ai compris que je voulais construire quelque chose où mes résultats dépendraient uniquement de la qualité de mon travail.<br></span>", "about.p1": "C'est ce qui m'a amené vers le <strong>copywriting</strong>. J'ai pu accumuler une solide expérience avec les <strong>ceennntaines d'heures</strong> passées à écrire, analyser et retravailler des pages de vente, emails et contenus marketing sur le marché français.",
+        "about.p2": "J'ai travaillé pour des clients dans des <strong>niches variées</strong> allant du coaching business à l'e-com, en passant par le sport <br> et la séduction.",
+        "about.p3": "<span style='font-family:Instrument Serif,serif;font-style:italic;font-size:clamp(17px,1.0vw,24px);line-height:1.3;color:#fff;'>Aujourd'hui, j’aide les entrepreneurs qui veulent <span style='color:var(--blue)'>attirer plus de clients,</span> et <span style='color:var(--blue)'>vendre mieux.</span> <br></span>Et quand je ne suis pas derrière mon clavier, je suis sur un court en train de taper la balle <span style='color:var(--blue)'>à la Rafa ! 🎾</span></span>", "port.label": "/ 02 — Portfolio", "port.title": "Mes <em>chefs-<br>d'œuvre.</em>", "port.right": "Clique pour\nvoir les projets",
+        "about.tag": "France · 2025",
         "ig.label": "/ 03 — Instagram", "ig.title": "Sur <em>Instagram.</em>", "ig.right": "@aaron.copywriting\nTémoignages · Cases",
         "ig.headline": "Témoignages,<br>cases & <em>coulisses.</em>", "ig.handle": "@aaron.copywriting", "ig.btn": "Suivre sur Instagram",
         "testi.label": "/ 04 — Témoignages", "testi.title": "Ils en <em>parlent</em><br>mieux que moi.", "testi.right": "Vidéos clients\nauthentiques",
@@ -27,17 +28,17 @@ const T = {
         "nav.home": "Home", "nav.services": "Services", "nav.testi": "Testimonials", "nav.cta": "Book a call",
         "hero.badge": "Available · 2026", "hero.meta": "Portfolio · 2026\nAaron · Copywriter",
         "hero.title": "The copywriter<br>for <span class='blue'>six-figure</span><br><span class='serif'>businesses.</span>",
-        "hero.desc": "My name is <strong>Aaron</strong>, I help entrepreneurs who want to <strong><br>attract more clients</strong>, <strong>sell more easily,</strong> and become the <strong>reference in their market.</strong>",
+        "hero.desc": "My name is <strong>Aaron</strong>, the right-hand man for <strong>6-figure</strong> entrepreneurs <br>who want to <strong>convert more,</strong> <strong>sell better,</strong> and speak more powerfully to the <strong>right audience</strong>",
         "hero.cta": "Book a call", "hero.ghost": "See projects ↓",
         "stat.1.l": "Experience", "stat.1.s": "Year of\ncopywriting",
         "stat.2.l": "Projects", "stat.2.s": "Projects\ncompleted",
         "stat.3.l": "Output", "stat.3.s": "Emails & Ads\nwritten",
         "stat.4.l": "Specialties", "stat.4.s": "Full-stack\ncopywriter",
         "about.label": "/ 01 — About", "about.title": "About <em>me.</em>", "about.right": "Copywriter\nsince 2025",
-        "about.lead": "My name is <span style='font-size:17px;'>Aaron, I'm 20 years old.</span><br><br> <span style='font-style:normal;font-size:14px;line-height:1.3;color:rgba(255,255,255,255);font-family:Archivo,sans-serif;font-weight:400;'>I've always been drawn to entrepreneurship and quickly realised a traditional path wasn't for me. <br> I needed autonomy, freedom and a job where my results depend directly on my work... not in a boss’s mood before his first coffee.</span>",
+        "about.lead": "My name is <span style='font-size:17px;'>Aaron.</span><br><br> <span style='font-style:normal;font-size:14px;line-height:1.3;color:rgba(255,255,255,255);font-family:Archivo,sans-serif;font-weight:400;'>I've always been drawn to entrepreneurship, and very early on I realised I wanted to build something where my results would depend solely on the quality of my work.<br></span>",
         "about.p1": "That's what led me to <strong>copywriting</strong>. I've built solid experience through <strong>hundreds of hours</strong> spent writing, analysing and refining sales pages, emails and marketing content for the French market.",
-        "about.p2": "I've worked with clients across <strong>various niches</strong> — from business coaching to e-commerce, fitness and seduction.",
-        "about.p3": "<span style='font-family:Instrument Serif,serif;font-style:italic;font-size:clamp(17px,1.0vw,24px);line-height:1.3;color:#fff;'>Today, I'm the secret weapon of entrepreneurs who want to <span style='color:var(--blue)'>convert more</span> and <span style='color:var(--blue)'>sell better.</span> <br></span>And when I'm not behind my keyboard, I'm on a court hitting balls <span style='color:var(--blue)'>like Rafa ! 🎾</span>",
+        "about.p2": "I've worked with clients across <strong>various niches</strong>, ranging from business coaching and e-commerce to fitness <br> and dating.",
+        "about.p3": "<span style='font-family:Instrument Serif,serif;font-style:italic;font-size:clamp(17px,1.0vw,24px);line-height:1.3;color:#fff;'>Today, I help entrepreneurs <span style='color:var(--blue)'>attract more clients</span> and <span style='color:var(--blue)'>sell more effectively.</span> <br></span>And when I'm not behind my keyboard, you'll probably find me on a tennis court trying to play <span style='color:var(--blue)'>like Rafa! 🎾</span></span>",        
         "about.tag": "France · 2025",
         "port.label": "/ 02 — Portfolio", "port.title": "My <em>master-<br>pieces.</em>", "port.right": "Click to\nsee projects",
         "ig.label": "/ 03 — Instagram", "ig.title": "On <em>Instagram.</em>", "ig.right": "@aaron.copywriting\nTestimonials · Cases",
@@ -123,6 +124,7 @@ function setLang(l) {
 /* ── CATEGORIES ── */
 // FIX ICÔNES : taille harmonisée à 36px pour toutes les images (cohérence visuelle)
 const ICON_SIZE = 'width:72px;height:72px;object-fit:contain;display:block;';
+const ICON_SIZE2 = 'width:200px;height:200px;object-fit:contain;display:block;';
 
 const CATEGORIES = [
     {
@@ -148,6 +150,7 @@ const CATEGORIES = [
             { name: "Tom & Seb - Coach Sportif", url: "https://docs.google.com/document/u/0/d/19DSm2afQKyWO1BkqzBm_MQfHnc_XIZ3xmUaLtfo2uro/edit" },
             { name: "Professeur de maths", url: "https://docs.google.com/document/u/0/d/12yckzdskfBodODzp19_YikKXdWXvHqWtzXBfhU8isbs/edit" },
             { name: "Jessim - Coach Sportif", url: "https://docs.google.com/document/d/1MaP4gPH91S4jTP88jjyAebyssPoH-gf5qrWMUCceWxA/edit?usp=sharing" },
+            { name: "Dayyane - LEADX", url: "https://docs.google.com/document/d/1RtvJ0Qp4ZuNWQX56vT-Me93aM7SJDdAIpg5kSD2d5qk/edit?usp=sharing" },
         ]
     },
     {
@@ -191,6 +194,17 @@ const CATEGORIES = [
             { name: "Irisart24", url: "https://aaroncopy.github.io/IrisArt/" },
         ]
     },
+    {
+        id: "stories",
+        icon: `<img src="image/story.png" style="${ICON_SIZE}">`,
+        key: "cat.stories",
+        projects: [
+            {
+                name: "Eliott - Coach sportif",
+                url: "https://docs.google.com/document/d/1eo6MHPaZII558PGaG7d7cFtytI9s-DCMONCOzWGcFuA/edit?usp=sharing"
+            },
+        ]
+    },
 ];
 
 // Traductions des catégories (noms + descriptions) intégrées directement dans renderCards
@@ -205,6 +219,7 @@ const CAT_LABELS = {
         { name: 'Post', italic: 'LinkedIn', desc: 'Posts d\'autorité pour générer du lead et asseoir ton personal brand.' },
         { name: 'Funnel de', italic: 'vente', desc: 'Séquences de vente complètes — du lead magnet au closing.' },
         { name: 'Content', italic: 'Visual', desc: 'Copywriting visuel pour arrêter le scroll et convertir l\'attention en autorité.' },
+        { name: 'Séquences de',italic: 'story',desc: 'Sequences de story pensées pour capter l’attention, créer de l’engagement et convertir naturellement.'},
     ],
     en: [
         { name: 'VSL', italic: '/Video Sales Letter', desc: 'Full video scripts — structure, storytelling and angle to convert cold traffic into buyers.' },
@@ -216,13 +231,15 @@ const CAT_LABELS = {
         { name: 'Post', italic: 'LinkedIn', desc: 'Authority posts to generate leads and build your personal brand.' },
         { name: 'Sales', italic: 'Funnel', desc: 'Complete sales sequences — from lead magnet to closing.' },
         { name: 'Visual', italic: 'Content', desc: 'Visual copywriting to stop the scroll and convert attention into authority.' },
+        { name: 'Story', italic: 'Sequences', desc: 'Story sequences designed to capture attention, build engagement and drive conversions.'
+},
     ]
 };
 
 // Traductions des titres de catégories pour le modal
 const CAT_MODAL_TITLES = {
-    fr: ['VSL', 'Emails', 'Ads', 'YouTube Content', 'Optin', 'Reels', 'Post LinkedIn', 'Funnel de vente', 'Content Visual'],
-    en: ['VSL', 'Emails', 'Ads', 'YouTube Content', 'Optin', 'Reels', 'LinkedIn Post', 'Sales Funnel', 'Visual Content'],
+    fr: ['VSL', 'Emails', 'Ads', 'YouTube Content', 'Optin', 'Reels', 'Post LinkedIn', 'Funnel de vente', 'Content Visual', 'Séquences de story'],
+    en: ['VSL', 'Emails', 'Ads', 'YouTube Content', 'Optin', 'Reels', 'LinkedIn Post', 'Sales Funnel', 'Visual Content', 'Story Sequences'],
 };
 
 function renderCards() {
