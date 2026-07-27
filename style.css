@@ -1,46 +1,46 @@
 :root {
- /* Colors */
- --bg: #000;
- --bg-2: #0a0a0a;
- --bg-3: #141414;
- --card: #0f0f0f;
+  /* Colors */
+  --bg: #000;
+  --bg-2: #0a0a0a;
+  --bg-3: #141414;
+  --card: #0f0f0f;
 
 
- --ink: #fff;
- --ink-dim: #888;
- --ink-muted: #555;
+  --ink: #fff;
+  --ink-dim: #888;
+  --ink-muted: #555;
 
 
- --blue: #006ce0;
- --blue-bright: #2b7fff;
- --blue-glow: rgba(0, 108, 224, 0.4);
- --blue-dim: rgba(0, 108, 224, 0.12);
+  --blue: #006ce0;
+  --blue-bright: #2b7fff;
+  --blue-glow: rgba(0, 108, 224, 0.4);
+  --blue-dim: rgba(0, 108, 224, 0.12);
 
 
- --line: rgba(255, 255, 255, 0.08);
- --line-blue: rgba(0, 108, 224, 0.2);
+  --line: rgba(255, 255, 255, 0.08);
+  --line-blue: rgba(0, 108, 224, 0.2);
 
 
- /* Radius */
- --radius-xs: 8px;
- --radius-sm: 12px;
- --radius-md: 20px;
- --radius-lg: 24px;
- --radius-pill: 999px;
+  /* Radius */
+  --radius-xs: 8px;
+  --radius-sm: 12px;
+  --radius-md: 20px;
+  --radius-lg: 24px;
+  --radius-pill: 999px;
 
 
- /* Shadows */
- --shadow-card: 0 18px 45px rgba(0, 0, 0, 0.45);
- --shadow-blue: 0 0 30px var(--blue-glow);
+  /* Shadows */
+  --shadow-card: 0 18px 45px rgba(0, 0, 0, 0.45);
+  --shadow-blue: 0 0 30px var(--blue-glow);
 
 
- /* Animations */
- --tr-fast: 0.2s ease;
- --tr: 0.3s ease;
- --tr-slow: 0.45s cubic-bezier(.2, .8, .2, 1);
+  /* Animations */
+  --tr-fast: 0.2s ease;
+  --tr: 0.3s ease;
+  --tr-slow: 0.45s cubic-bezier(.2, .8, .2, 1);
 
 
- --nav-h: 72px;
+  --nav-h: 72px;
 }
 
 
@@ -2333,7 +2333,7 @@ footer a:hover {
   bottom: 18px;
 
   z-index: 5;
-
+  background: none;
 }
 
 .video-name {
