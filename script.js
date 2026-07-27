@@ -15,8 +15,8 @@ const T = {
         "about.p2": "J'ai travaillé pour des clients dans des <strong>niches variées</strong> allant du coaching business à l'e-com, en passant par le sport <br> et la séduction.",
         "about.p3": "<span style='font-family:Instrument Serif,serif;font-style:italic;font-size:clamp(20px);line-height:1.3;color:#fff;'>Aujourd'hui, j’aide les entrepreneurs qui veulent <span style='color:var(--blue)'>attirer plus de clients,</span> et <span style='color:var(--blue)'>vendre mieux.</span> <br></span>Et quand je ne suis pas derrière mon clavier, je suis sur un court en train de taper la balle <span style='color:var(--blue)'>à la Rafa ! 🎾</span></span>", "port.label": "/ 02 — Portfolio", "port.title": "Mes <em>chefs-<br>d'œuvre.</em>", "port.right": "Clique pour\nvoir les projets",
         "about.tag": "France · 2025",
-        "ig.label": "/ 03 — Instagram", "ig.title": "Sur <em>Instagram.</em>", "ig.right": "@aaron.copywriting\nTémoignages · Cases",
-        "ig.headline": "Témoignages,<br>cases & <em>coulisses.</em>", "ig.handle": "@aaron.copywriting", "ig.btn": "Suivre sur Instagram",
+        "ig.label": "/ 03 — Instagram", "ig.title": "Sur <em>Instagram.</em>", "ig.right": "@aaron.vichard\nTémoignages · Cases",
+        "ig.headline": "Témoignages,<br>cases & <em>coulisses.</em>", "ig.handle": "@aaron.vichard", "ig.btn": "Suivre sur Instagram",
         "testi.label": "/ 04 — Témoignages", "testi.title": "Ils en <em>parlent</em><br>mieux que moi.", "testi.right": "Vidéos clients\nauthentiques",
         "testi.tag": "Témoignage",
         "cta.label": "Ready when you are", "cta.title": "On <em>parle</em> ?", "cta.btn": "Réserver un appel",
@@ -41,8 +41,8 @@ const T = {
         "about.p3": "<span style='font-family:Instrument Serif,serif;font-style:italic;font-size:clamp(17px,1.0vw,24px);line-height:1.3;color:#fff;'>Today, I help entrepreneurs <span style='color:var(--blue)'>attract more clients</span> and <span style='color:var(--blue)'>sell more effectively.</span> <br></span>And when I'm not behind my keyboard, you'll probably find me on a tennis court trying to play <span style='color:var(--blue)'>like Rafa! 🎾</span></span>",        
         "about.tag": "France · 2025",
         "port.label": "/ 02 — Portfolio", "port.title": "My <em>master-<br>pieces.</em>", "port.right": "Click to\nsee projects",
-        "ig.label": "/ 03 — Instagram", "ig.title": "On <em>Instagram.</em>", "ig.right": "@aaron.copywriting\nTestimonials · Cases",
-        "ig.headline": "Testimonials,<br>cases & <em>behind the scenes.</em>", "ig.handle": "@aaron.copywriting", "ig.btn": "Follow on Instagram",
+        "ig.label": "/ 03 — Instagram", "ig.title": "On <em>Instagram.</em>", "ig.right": "@aaron.vichard\nTestimonials · Cases",
+        "ig.headline": "Testimonials,<br>cases & <em>behind the scenes.</em>", "ig.handle": "@aaron.vichard", "ig.btn": "Follow on Instagram",
         "testi.label": "/ 04 — Testimonials", "testi.title": "They say it<br>better than <em>me.</em>", "testi.right": "Authentic\nclient videos",
         "testi.tag": "Testimonial",
         "cta.label": "Ready when you are", "cta.title": "Let's <em>talk?</em>", "cta.btn": "Book a call",
@@ -361,9 +361,9 @@ const hero = document.querySelector(".hero-photo");
 
 document.addEventListener("mousemove", (e) => {
 
-    const x = (e.clientX / window.innerWidth - .5) * 12;
+    const x = (e.clientX / window.innerWidth - .5) * 4;
 
-    const y = (e.clientY / window.innerHeight - .5) * 12;
+    const y = (e.clientY / window.innerHeight - .5) * 4;
 
     hero.style.transform = `translate(${x}px,${y}px)`;
 
